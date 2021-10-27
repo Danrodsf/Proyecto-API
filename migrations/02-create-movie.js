@@ -9,16 +9,16 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       title: {
+        allowNull: false,
         type: Sequelize.STRING
       },
-      orderId: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'orders',
-          key: 'id'
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE'
+      genre: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
+      cast: {
+        allowNull: false,
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

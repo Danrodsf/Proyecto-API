@@ -11,13 +11,14 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.belongsTo(models.order, {
-        foreignKey: 'movieId'
+        foreignKey: 'orderId'
       });
     }
   };
   movie.init({
     title: DataTypes.STRING,
-    orderId: DataTypes.INTEGER
+    genre: DataTypes.STRING,
+    cast: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'movie',

@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      this.hasMany(models.order, {
+        foreignKey: 'userId'
+      });
     }
   };
   user.init({
@@ -18,11 +20,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    password: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    email: {
+    password: {
       type: DataTypes.STRING,
       allowNull: false
     },
