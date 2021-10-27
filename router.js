@@ -5,7 +5,7 @@ const auth = require('./middlewares/auth');
 
 //Importamos Routes definidas en views
 const MovieRouter = require('./views/MovieRouter');
-const OrderRouter = require('./views/CategoryRouter');
+const OrderRouter = require('./views/OrderRouter');
 const UserRouter = require('./views/UserRouter');
 
 //Rutas

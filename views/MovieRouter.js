@@ -8,6 +8,8 @@ const MovieController = require('../controllers/MovieController');
 router.get('/', MovieController.getAll);
 router.get('/:id', MovieController.getById);
 router.get('/name/:title', MovieController.getByTitle);
+// router.get('/name/:title', MovieController.getByGenre);
+// router.get('/name/:title', MovieController.getByCast);
 router.post('/', MovieController.create);
 router.put('/:id', MovieController.update);
 router.delete('/', MovieController.deleteAll);
