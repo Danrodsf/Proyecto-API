@@ -8,19 +8,83 @@ const users = db.user;
 const AuthController = {}; //Create the object controller
 
 //-------------------------------------------------------------------------------------
-//GET all movies from database
+//GET all users from database
 AuthController.getAll = (req, res) => {
+    let { email, password } = req.body;
+    // Buscar usuario
+    user.findOne({
+        where: { email: email }
+    }).then(user => {
+        if (!user) {
+            res.status(404).json({ msg: "Usuario con este correo no encontrado" });
+        } else {
+            if (bcrypt.compareSync(password, user.password)) {
 
-    users.findAll()
-        .then(data => {
-            res.send(data);
-        })
-        .catch(err => {
-            res.status(500).send({
-                message:
-                    err.message || "Some error occurred while retrieving users."
-            });
-        });
+                if (user.admin) {
+                    users.findAll()
+                        .then(data => {
+                            res.send(data);
+                        })
+                        .catch(err => {
+                            res.status(500).send({
+                                message:
+                                    err.message || "Some error occurred while retrieving users."
+                            });
+                        });
+                } else {
+                    // Unauthorized Access
+                    res.status(401).json({ msg: "User is not an Admin" })
+                }
+
+            } else {
+                // Unauthorized Access
+                res.status(401).json({ msg: "Contraseña incorrecta" })
+            }
+        }
+    }).catch(err => {
+        res.status(500).json(err);
+    })
+};
+
+
+//-------------------------------------------------------------------------------------
+//GET user by Id from database
+AuthController.getById = (req, res) => {
+    const id = req.params.id;
+    let { email, password } = req.body;
+    // Buscar usuario
+    user.findOne({
+        where: { email: email }
+    }).then(user => {
+        if (!user) {
+            res.status(404).json({ msg: "Usuario con este correo no encontrado" });
+        } else {
+            if (bcrypt.compareSync(password, user.password)) {
+
+                if (user.admin) {
+                    users.findByPk(id)
+                        .then(data => {
+                            if (data) {
+                                res.send(data);
+                            } else {
+                                res.status(404).send({
+                                    message: `Cannot find User with id=${id}.`
+                                });
+                            }
+                        })
+                } else {
+                    // Unauthorized Access
+                    res.status(401).json({ msg: "User is not an Admin" })
+                }
+
+            } else {
+                // Unauthorized Access
+                res.status(401).json({ msg: "Contraseña incorrecta" })
+            }
+        }
+    }).catch(err => {
+        res.status(500).json(err);
+    })
 };
 
 

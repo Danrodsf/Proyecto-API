@@ -6,7 +6,7 @@ module.exports = (req, res, next) => {
     console.log(req.headers);
 
     // Comprobar que existe el token
-    if(!req.headers.authorization) {
+    if (!req.headers.authorization) {
         res.status(401).json({ msg: "Acceso no autorizado" });
     } else {
 
@@ -16,7 +16,7 @@ module.exports = (req, res, next) => {
         // Comprobar la validez de este token
         jwt.verify(token, authConfig.secret, (err, decoded) => {
 
-            if(err) {
+            if (err) {
                 res.status(500).json({ msg: "Ha ocurrido un problema al decodificar el token", err });
             } else {
                 req.user = decoded;
