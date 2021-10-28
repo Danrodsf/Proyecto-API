@@ -90,6 +90,52 @@ AuthController.signUp = (req, res) => {
 
 
 //-------------------------------------------------------------------------------------
+//DELETE a user in database
+//deleteUser
+AuthController.deleteUser = (req, res) => {
+    const id = req.params.id;
+    let { email, password } = req.body;
+    // Buscar usuario
+    user.findOne({
+        where: { email: email }
+    }).then(user => {
+        if (!user) {
+            res.status(404).json({ msg: "Usuario con este correo no encontrado" });
+        } else {
+            if (bcrypt.compareSync(password, user.password)) {
+
+                if (user.admin) {
+                    users.destroy({
+                        where: { id: id }
+                    })
+                        .then(num => {
+                            if (num == 1) {
+                                res.send({
+                                    message: "User was deleted successfully!"
+                                });
+                            } else {
+                                res.send({
+                                    message: `Cannot delete User with id=${id}. Maybe User was not found!`
+                                });
+                            }
+                        })
+                } else {
+                    // Unauthorized Access
+                    res.status(401).json({ msg: "User is not an Admin" })
+                }
+
+            } else {
+                // Unauthorized Access
+                res.status(401).json({ msg: "Contraseña incorrecta" })
+            }
+        }
+    }).catch(err => {
+        res.status(500).json(err);
+    })
+};
+
+
+//-------------------------------------------------------------------------------------
 //DELETE ALL Non Admin users in database
 //deleteAll
 AuthController.deleteAll = (req, res) => {

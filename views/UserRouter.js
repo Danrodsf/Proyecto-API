@@ -10,6 +10,7 @@ const AuthController = require('../controllers/AuthController');
 router.post('/signin', AuthController.signIn);
 router.post('/signup', AuthController.signUp);
 router.get('/', AuthController.getAll);
+router.delete('/:id', AuthController.deleteUser);
 router.delete('/', AuthController.deleteAll);
 
 
