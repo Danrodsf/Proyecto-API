@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.belongsTo(models.order, {
-        foreignKey: 'orderId'
+      this.hasMany(models.order, {
+        foreignKey: 'movieId'
       });
     }
   };

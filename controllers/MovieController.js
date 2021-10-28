@@ -65,7 +65,8 @@ MovieController.create = (req, res) => {
   // Create a Movies
   const newMovie = {
     title: req.body.title,
-    orderId: req.body.orderId
+    genre: req.body.genre,
+    cast: req.body.cast,
   };
 
   // Save Movies in the database
@@ -120,7 +121,41 @@ MovieController.getByTitle = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving tutorials."
+          err.message || "Some error occurred while retrieving Movie."
+      });
+    });
+};
+
+
+//-------------------------------------------------------------------------------------
+//GET movie by Genre from database 
+//FindByGenre
+MovieController.getByGenre = (req, res) => {
+  movies.findAll({ where: { genre: req.params.genre } })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving Movies."
+      });
+    });
+};
+
+
+//-------------------------------------------------------------------------------------
+//GET movie by Cast from database 
+//FindByCast
+MovieController.getByCast = (req, res) => {
+  movies.findAll({ where: { cast: req.params.cast } })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving Movies."
       });
     });
 };

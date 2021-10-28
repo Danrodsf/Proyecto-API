@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     returnDate: DataTypes.DATE
   }, {
     sequelize,
+    timestamps: false,
     modelName: 'order',
   });
   return order;
