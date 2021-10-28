@@ -9,6 +9,8 @@ const AuthController = require('../controllers/AuthController');
 // /api/singin & /api/singup
 router.post('/signin', AuthController.signIn);
 router.post('/signup', AuthController.signUp);
+router.get('/', AuthController.getAll);
+router.delete('/', AuthController.deleteAll);
 
 
 module.exports = router;
