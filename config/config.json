@@ -3,7 +3,7 @@
     "username": "b46fa0fe020134",
     "password": "43ae6490",
     "database": "MovieClub",
-    "host": "https://drs-proyecto-api.herokuapp.com/",
+    "host": "eu-cdbr-west-01.cleardb.com",
     "port": "3306",
     "dialect": "mysql"
   },
@@ -11,7 +11,7 @@
     "username": "b46fa0fe020134",
     "password": "43ae6490",
     "database": "MovieClub",
-    "host": "https://drs-proyecto-api.herokuapp.com/",
+    "host": "eu-cdbr-west-01.cleardb.com",
     "port": "3306",
     "dialect": "mysql"
   },
@@ -19,7 +19,7 @@
     "username": "b46fa0fe020134",
     "password": "43ae6490",
     "database": "MovieClub",
-    "host": "https://drs-proyecto-api.herokuapp.com/",
+    "host": "eu-cdbr-west-01.cleardb.com",
     "port": "3306",
     "dialect": "mysql"
   }
