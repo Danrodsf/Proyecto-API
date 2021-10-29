@@ -2,7 +2,7 @@
   "development": {
     "username": "b46fa0fe020134",
     "password": "43ae6490",
-    "database": "MovieClub",
+    "database": "heroku_30ddf7e4d0fbe7d",
     "host": "eu-cdbr-west-01.cleardb.com",
     "port": "3306",
     "dialect": "mysql"
@@ -10,7 +10,7 @@
   "test": {
     "username": "b46fa0fe020134",
     "password": "43ae6490",
-    "database": "MovieClub",
+    "database": "heroku_30ddf7e4d0fbe7d",
     "host": "eu-cdbr-west-01.cleardb.com",
     "port": "3306",
     "dialect": "mysql"
@@ -18,7 +18,7 @@
   "production": {
     "username": "b46fa0fe020134",
     "password": "43ae6490",
-    "database": "MovieClub",
+    "database": "heroku_30ddf7e4d0fbe7d",
     "host": "eu-cdbr-west-01.cleardb.com",
     "port": "3306",
     "dialect": "mysql"
