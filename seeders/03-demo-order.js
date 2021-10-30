@@ -4,123 +4,103 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
 
     await queryInterface.bulkInsert('orders', [{
-      id: 1,
       userId: 15,
-      movieId: 61,
+      movieId: 5,
       rentDate: new Date(),
       returnDate: new Date
     }, {
-      id: 2,
-      userId: 5,
+      userId: 25,
       movieId: 15,
       rentDate: new Date(),
       returnDate: new Date
     }, {
-      id: 3,
-      userId: 6,
-      movieId: 10,
+      userId: 35,
+      movieId: 25,
       rentDate: new Date(),
       returnDate: new Date
     }, {
-      id: 4,
-      userId: 10,
-      movieId: 89,
+      userId: 45,
+      movieId: 35,
       rentDate: new Date(),
       returnDate: new Date
     }, {
-      id: 5,
-      userId: 17,
-      movieId: 59,
+      userId: 55,
+      movieId: 45,
       rentDate: new Date(),
       returnDate: new Date
     }, {
-      id: 6,
-      userId: 19,
-      movieId: 74,
+      userId: 65,
+      movieId: 55,
       rentDate: new Date(),
       returnDate: new Date
     }, {
-      id: 7,
-      userId: 6,
+      userId: 75,
+      movieId: 65,
+      rentDate: new Date(),
+      returnDate: new Date
+    }, {
+      userId: 85,
+      movieId: 75,
+      rentDate: new Date(),
+      returnDate: new Date
+    }, {
+      userId: 95,
       movieId: 85,
       rentDate: new Date(),
       returnDate: new Date
     }, {
-      id: 8,
-      userId: 6,
-      movieId: 4,
+      userId: 105,
+      movieId: 95,
       rentDate: new Date(),
       returnDate: new Date
     }, {
-      id: 9,
-      userId: 4,
-      movieId: 67,
+      userId: 115,
+      movieId: 105,
       rentDate: new Date(),
       returnDate: new Date
     }, {
-      id: 10,
-      userId: 14,
-      movieId: 87,
+      userId: 125,
+      movieId: 115,
       rentDate: new Date(),
       returnDate: new Date
     }, {
-      id: 11,
-      userId: 4,
-      movieId: 90,
+      userId: 135,
+      movieId: 125,
       rentDate: new Date(),
       returnDate: new Date
     }, {
-      id: 12,
-      userId: 4,
-      movieId: 37,
+      userId: 145,
+      movieId: 135,
       rentDate: new Date(),
       returnDate: new Date
     }, {
-      id: 13,
-      userId: 8,
-      movieId: 81,
+      userId: 155,
+      movieId: 145,
       rentDate: new Date(),
       returnDate: new Date
     }, {
-      id: 14,
-      userId: 10,
-      movieId: 47,
+      userId: 165,
+      movieId: 155,
       rentDate: new Date(),
       returnDate: new Date
     }, {
-      id: 15,
-      userId: 20,
-      movieId: 78,
+      userId: 175,
+      movieId: 165,
       rentDate: new Date(),
       returnDate: new Date
     }, {
-      id: 16,
-      userId: 3,
-      movieId: 39,
+      userId: 185,
+      movieId: 175,
       rentDate: new Date(),
       returnDate: new Date
     }, {
-      id: 17,
-      userId: 17,
-      movieId: 31,
+      userId: 195,
+      movieId: 185,
       rentDate: new Date(),
       returnDate: new Date
     }, {
-      id: 18,
-      userId: 18,
-      movieId: 44,
-      rentDate: new Date(),
-      returnDate: new Date
-    }, {
-      id: 19,
-      userId: 4,
-      movieId: 92,
-      rentDate: new Date(),
-      returnDate: new Date
-    }, {
-      id: 20,
-      userId: 16,
-      movieId: 97,
+      userId: 5,
+      movieId: 195,
       rentDate: new Date(),
       returnDate: new Date
     },
