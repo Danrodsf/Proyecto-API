@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+// Middlewares
+const authJwt = require("../middlewares/auth");
+
 /**
  * @swagger
  * components:
@@ -37,22 +40,22 @@ const router = express.Router();
 const MovieController = require('../controllers/MovieController');
 
 // End-points CRUD movies
-router.get('/', MovieController.getAll);
+router.get('/', authJwt.verifyToken, MovieController.getAll);
 
 /**
  * @swagger
  * /movies:
  *   get:
- *     summary: Retrieve the list of movies.
+ *     summary: Retrieve the list of all the movies.
  *     tags: [Movies]
- *     description: Retrieve the list of movies.
+ *     description: Retrieve the list of all the movies.
  *     responses:
  *       200:
- *         description: list of movies.
+ *         description: list of all movies.
  *     security:
  *       - bearerAuth: []
  */
-router.get('/:id', MovieController.getById);
+router.get('/:id', authJwt.verifyToken, MovieController.getById);
 /**
  * @swagger
  * /movies/{id}:
@@ -72,7 +75,7 @@ router.get('/:id', MovieController.getById);
  *     security:
  *       - bearerAuth: []
  */
-router.get('/name/:title', MovieController.getByTitle);
+router.get('/name/:title', authJwt.verifyToken, MovieController.getByTitle);
 /**
  * @swagger
  * /movies/name/{title}:
@@ -92,7 +95,7 @@ router.get('/name/:title', MovieController.getByTitle);
  *     security:
  *       - bearerAuth: []
  */
-router.get('/genre/:genre', MovieController.getByGenre);
+router.get('/genre/:genre', authJwt.verifyToken, MovieController.getByGenre);
 /**
  * @swagger
  * /movies/genre/{genre}:
@@ -112,7 +115,7 @@ router.get('/genre/:genre', MovieController.getByGenre);
  *     security:
  *       - bearerAuth: []
  */
-router.get('/cast/:cast', MovieController.getByCast);
+router.get('/cast/:cast', authJwt.verifyToken, MovieController.getByCast);
 /**
  * @swagger
  * /movies/cast/{cast}:
@@ -132,7 +135,7 @@ router.get('/cast/:cast', MovieController.getByCast);
  *     security:
  *       - bearerAuth: []
  */
-router.post('/', MovieController.create);
+router.post('/', authJwt.isAdmin, MovieController.create);
 /**
  * @swagger
  * /movies:
@@ -152,7 +155,7 @@ router.post('/', MovieController.create);
  *       - bearerAuth: []
  */
 
-router.put('/:id', MovieController.update);
+router.put('/:id', authJwt.isAdmin, MovieController.update);
 /**
  * @swagger
  * /movies/{id}:
@@ -179,13 +182,13 @@ router.put('/:id', MovieController.update);
  *       - bearerAuth: []
  *
  */
-router.delete('/', MovieController.deleteAll);
-router.delete('/:id', MovieController.delete);
+router.delete('/', authJwt.isAdmin, MovieController.deleteAll);
+router.delete('/:id', authJwt.isAdmin, MovieController.delete);
 /**
  * @swagger
  *  /movies/{id}:
  *    delete:
- *      summary: removes movie from array
+ *      summary: removes movie from Database
  *      tags: [Movies]
  *      parameters:
  *        - in: path
@@ -197,8 +200,6 @@ router.delete('/:id', MovieController.delete);
  *      responses:
  *        200:
  *          description: The movie was deleted
- *        404:
- *          description: The movie was not found
  *      security:
  *       - bearerAuth: []
  *

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // Middlewares
-const auth = require('../middlewares/auth');
+const authJwt = require("../middlewares/auth");
 
 //Importo modelo de datos
 const AuthController = require('../controllers/AuthController');
@@ -41,7 +41,7 @@ const AuthController = require('../controllers/AuthController');
 
 // Dos rutas: login y registro
 // /api/singin & /api/singup
-router.get('/', AuthController.getAll);
+router.get('/', authJwt.isAdmin, AuthController.getAll);
 /**
  * @swagger
  * /users:
@@ -57,7 +57,7 @@ router.get('/', AuthController.getAll);
  *     security:
  *       - bearerAuth: []
  */
-router.get('/:id', AuthController.getById);
+router.get('/:id', authJwt.isAdmin, AuthController.getById);
 /**
  * @swagger
  * /users/{id}:
@@ -111,7 +111,7 @@ router.post('/signup', AuthController.signUp);
  *       200:
  *         description: The User has successfully loggedIn
  */
-router.delete('/:id', auth, AuthController.deleteUser);
+router.delete('/:id', authJwt.isAdmin, AuthController.deleteUser);
 /**
  * @swagger
  *  /users/{id}:
@@ -132,7 +132,7 @@ router.delete('/:id', auth, AuthController.deleteUser);
  *       - bearerAuth: []
  *
  */
-router.delete('/', auth, AuthController.deleteAll);
+router.delete('/', authJwt.isAdmin, AuthController.deleteAll);
 
 
 module.exports = router;

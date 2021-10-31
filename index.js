@@ -27,7 +27,7 @@ app.use(cors(corsOptions)); //Add CORS Middleware
 
 
 //Rutas
-app.get('/', (req, res) => { res.send('Welcome to Video Premiere'); });
+app.get('/', (req, res) => { res.send('Welcome to MovieAPI'); });
 
 app.use(router);
 
@@ -37,7 +37,7 @@ const swaggerDoc = swaggerJSDoc({
     info: {
       title: 'MovieAPI',
       version: "1.0.0",
-      description: 'Documentación de la API',
+      description: 'Welcome to my first API. ',
     }
   },
   apis: ['./views/*.js']

@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
+// Middlewares
+const authJwt = require("../middlewares/auth");
+
 //Importo modelo de datos
 const OrderController = require('../controllers/OrderController');
 
@@ -32,7 +35,7 @@ const OrderController = require('../controllers/OrderController');
  */
 
 // End-points CRUD Orders
-router.get('/', OrderController.getAll);
+router.get('/', authJwt.isAdmin, OrderController.getAll);
 /**
  * @swagger
  * /orders:
@@ -46,7 +49,7 @@ router.get('/', OrderController.getAll);
  *     security:
  *      - bearerAuth: []
  */
-router.get('/:id', OrderController.getById);
+router.get('/:id', authJwt.isAdmin, OrderController.getById);
 /**
  * @swagger
  * /orders/{id}:
@@ -62,11 +65,11 @@ router.get('/:id', OrderController.getById);
  *         required: true
  *     responses:
  *       200:
- *         description: Order by its id
+ *         description: Retrieves Order by its id
  *     security:
  *      - bearerAuth: []
  */
-router.post('/', OrderController.create);
+router.post('/', authJwt.verifyToken, OrderController.create);
 /**
  * @swagger
  * /orders:
@@ -85,7 +88,7 @@ router.post('/', OrderController.create);
  *     security:
  *      - bearerAuth: []
  */
-router.put('/:id', OrderController.update);
+router.put('/:id', authJwt.isAdmin, OrderController.update);
 /**
  * @swagger
  * /orders/{id}:
@@ -112,8 +115,8 @@ router.put('/:id', OrderController.update);
  *      - bearerAuth: []
  *
  */
-router.delete('/', OrderController.deleteAll);
-router.delete('/:id', OrderController.delete);
+router.delete('/', authJwt.isAdmin, OrderController.deleteAll);
+router.delete('/:id', authJwt.isAdmin, OrderController.delete);
 /**
  * @swagger
  *  /orders/{id}:
@@ -130,8 +133,6 @@ router.delete('/:id', OrderController.delete);
  *      responses:
  *        200:
  *          description: The order was deleted
- *        404:
- *          description: The order was not found
  *      security:
  *       - bearerAuth: []
  *
