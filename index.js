@@ -1,10 +1,13 @@
 const express = require('express');
+const swaggerJSDoc = require('swagger-jsdoc');
+const swaggerUI = require('swagger-ui-express');
 const colors = require('colors');
 const morgan = require('morgan');
 const logger = require('./config/winston');
 const db = require('./db.js');
 const router = require('./router.js');
 const cors = require("cors"); // Import cors module
+const { version } = require('winston');
 
 const app = express();
 const PORT = process.env.PORT || 3000; //Configuramos puerto heroku
@@ -22,9 +25,26 @@ app.use(morgan('combined', { stream: logger.stream }));
 app.use(express.json());
 app.use(cors(corsOptions)); //Add CORS Middleware
 
+
 //Rutas
-app.get('/', (req, res) => { res.send('Welcome to Video Premiere'); });
+app.get('/', (req, res) => { res.send('Welcome to MovieAPI'); });
+
 app.use(router);
+
+const swaggerDoc = swaggerJSDoc({
+  swaggerDefinition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'MovieAPI',
+      version: "1.0.0",
+      description: 'Welcome to my first API. ',
+    }
+  },
+  apis: ['./views/*.js']
+});
+
+app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDoc));
+
 
 //Connecting to the database
 db.then(() => {

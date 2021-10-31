@@ -10,81 +10,38 @@ const AuthController = {}; //Create the object controller
 //-------------------------------------------------------------------------------------
 //GET all users from database
 AuthController.getAll = (req, res) => {
-    let { email, password } = req.body;
-    // Buscar usuario
-    user.findOne({
-        where: { email: email }
-    }).then(user => {
-        if (!user) {
-            res.status(404).json({ msg: "Usuario con este correo no encontrado" });
-        } else {
-            if (bcrypt.compareSync(password, user.password)) {
-
-                if (user.admin) {
-                    users.findAll()
-                        .then(data => {
-                            res.send(data);
-                        })
-                        .catch(err => {
-                            res.status(500).send({
-                                message:
-                                    err.message || "Some error occurred while retrieving users."
-                            });
-                        });
-                } else {
-                    // Unauthorized Access
-                    res.status(401).json({ msg: "User is not an Admin" })
-                }
-
-            } else {
-                // Unauthorized Access
-                res.status(401).json({ msg: "Contraseña incorrecta" })
-            }
-        }
-    }).catch(err => {
-        res.status(500).json(err);
-    })
+    users.findAll()
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while retrieving users."
+            });
+        });
 };
-
 
 //-------------------------------------------------------------------------------------
 //GET user by Id from database
 AuthController.getById = (req, res) => {
     const id = req.params.id;
-    let { email, password } = req.body;
-    // Buscar usuario
-    user.findOne({
-        where: { email: email }
-    }).then(user => {
-        if (!user) {
-            res.status(404).json({ msg: "Usuario con este correo no encontrado" });
-        } else {
-            if (bcrypt.compareSync(password, user.password)) {
 
-                if (user.admin) {
-                    users.findByPk(id)
-                        .then(data => {
-                            if (data) {
-                                res.send(data);
-                            } else {
-                                res.status(404).send({
-                                    message: `Cannot find User with id=${id}.`
-                                });
-                            }
-                        })
-                } else {
-                    // Unauthorized Access
-                    res.status(401).json({ msg: "User is not an Admin" })
-                }
-
+    users.findByPk(id)
+        .then(data => {
+            if (data) {
+                res.send(data);
             } else {
-                // Unauthorized Access
-                res.status(401).json({ msg: "Contraseña incorrecta" })
+                res.status(404).send({
+                    message: `Cannot find user with id=${id}.`
+                });
             }
-        }
-    }).catch(err => {
-        res.status(500).json(err);
-    })
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: "Error retrieving user with id=" + id
+            });
+        });
 };
 
 
@@ -98,7 +55,7 @@ AuthController.signIn = (req, res) => {
         where: { email: email }
     }).then(user => {
         if (!user) {
-            res.status(404).json({ msg: "Usuario con este correo no encontrado" });
+            res.status(404).json({ msg: "email not found in users" });
         } else {
             if (bcrypt.compareSync(password, user.password)) {
                 // Creamos el token
@@ -112,7 +69,7 @@ AuthController.signIn = (req, res) => {
                 })
             } else {
                 // Unauthorized Access
-                res.status(401).json({ msg: "Contraseña incorrecta" })
+                res.status(401).json({ msg: "Wrong Password" })
             }
         }
     }).catch(err => {
@@ -158,44 +115,26 @@ AuthController.signUp = (req, res) => {
 //deleteUser
 AuthController.deleteUser = (req, res) => {
     const id = req.params.id;
-    let { email, password } = req.body;
-    // Buscar usuario
-    user.findOne({
-        where: { email: email }
-    }).then(user => {
-        if (!user) {
-            res.status(404).json({ msg: "Usuario con este correo no encontrado" });
-        } else {
-            if (bcrypt.compareSync(password, user.password)) {
 
-                if (user.admin) {
-                    users.destroy({
-                        where: { id: id }
-                    })
-                        .then(num => {
-                            if (num == 1) {
-                                res.send({
-                                    message: "User was deleted successfully!"
-                                });
-                            } else {
-                                res.send({
-                                    message: `Cannot delete User with id=${id}. Maybe User was not found!`
-                                });
-                            }
-                        })
-                } else {
-                    // Unauthorized Access
-                    res.status(401).json({ msg: "User is not an Admin" })
-                }
-
-            } else {
-                // Unauthorized Access
-                res.status(401).json({ msg: "Contraseña incorrecta" })
-            }
-        }
-    }).catch(err => {
-        res.status(500).json(err);
+    users.destroy({
+        where: { id: id }
     })
+        .then(num => {
+            if (num == 1) {
+                res.send({
+                    message: "User was deleted successfully!"
+                });
+            } else {
+                res.send({
+                    message: `Cannot delete User with id=${id}. Maybe User was not found!`
+                });
+            }
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: "Could not delete User with id=" + id
+            });
+        });
 };
 
 
@@ -203,37 +142,19 @@ AuthController.deleteUser = (req, res) => {
 //DELETE ALL Non Admin users in database
 //deleteAll
 AuthController.deleteAll = (req, res) => {
-    let { email, password } = req.body;
-    // Buscar usuario
-    user.findOne({
-        where: { email: email }
-    }).then(user => {
-        if (!user) {
-            res.status(404).json({ msg: "Usuario con este correo no encontrado" });
-        } else {
-            if (bcrypt.compareSync(password, user.password)) {
-
-                if (user.admin) {
-                    users.destroy({
-                        where: { admin: null },
-                        truncate: false
-                    })
-                        .then(nums => {
-                            res.send({ message: `${nums} non Admin Users were deleted successfully!` });
-                        })
-                } else {
-                    // Unauthorized Access
-                    res.status(401).json({ msg: "User is not an Admin" })
-                }
-
-            } else {
-                // Unauthorized Access
-                res.status(401).json({ msg: "Contraseña incorrecta" })
-            }
-        }
-    }).catch(err => {
-        res.status(500).json(err);
+    users.destroy({
+        where: {},
+        truncate: false
     })
+        .then(nums => {
+            res.send({ message: `${nums} Users were deleted successfully!` });
+        })
+        .catch(err => {
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while removing all users."
+            });
+        });
 };
 
 module.exports = AuthController;
