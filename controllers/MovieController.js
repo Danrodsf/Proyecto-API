@@ -1,20 +1,16 @@
 //Importo modelo de datos
 const db = require("../models");
 const movies = db.movie;
-const Op = db.Sequelize.Op; //Import all ORM sequelize functions 
-
-var orderModel = require('../models').order;  //Add for dependency response
+const order = db.order;
 
 const MovieController = {}; //Create the object controller
-
-
 
 //CRUD end-points Functions
 //-------------------------------------------------------------------------------------
 //GET all movies from database
 MovieController.getAll = (req, res) => {
 
-  movies.findAll({ include: [{ model: orderModel }] })
+  movies.findAll({ include: [{ model: order }] })
     .then(data => {
       res.send(data);
     })
@@ -32,7 +28,7 @@ MovieController.getAll = (req, res) => {
 MovieController.getById = (req, res) => {
   const id = req.params.id;
 
-  movies.findByPk(id, { include: [{ model: orderModel }] })
+  movies.findByPk(id, { include: [{ model: order }] })
     .then(data => {
       if (data) {
         res.send(data);
@@ -67,6 +63,7 @@ MovieController.create = (req, res) => {
     title: req.body.title,
     genre: req.body.genre,
     cast: req.body.cast,
+    city: req.body.city
   };
 
   // Save Movies in the database
@@ -156,6 +153,23 @@ MovieController.getByCast = (req, res) => {
       res.status(500).send({
         message:
           err.message || "Some error occurred while retrieving Movies."
+      });
+    });
+};
+
+
+//-------------------------------------------------------------------------------------
+//GET movie by City from database 
+//FindByCity
+MovieController.getByCity = (req, res) => {
+  movies.findAll({ where: { city: req.params.city } })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving Movie."
       });
     });
 };

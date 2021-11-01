@@ -4,603 +4,703 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
 
     await queryInterface.bulkInsert('movies', [{
-      title: "Girl on the Bridge, The (Fille sur le pont, La)",
-      genre: "Adventure",
+      title: "Seeking Asian Female",
+      genre: "Sci-fi",
+      cast: "Al Pacino",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Class of 1999 II: The Substitute",
+      genre: "Fantasy",
+      cast: "Liam Neeson",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Wild One, The",
+      genre: "Fantasy",
+      cast: "Jamie Foxx",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "I Could Go on Singing",
+      genre: "Romance",
       cast: "Daniel Day-Lewis",
+      city: "Madrid",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Too Early, Too Late (Trop tôt, trop tard)",
-      genre: "Horror",
-      cast: "Johnny Depp",
+      title: "Lost Youth",
+      genre: "Thriller",
+      cast: "Matthew McConaughey",
+      city: "Valencia",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Borrowers, The",
-      genre: "Horror",
+      title: "Corpo Celeste",
+      genre: "Crime",
+      cast: "Matthew McConaughey",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Last Blitzkrieg, The",
+      genre: "Adventure",
+      cast: "Nicolas Cage",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Levitated Mass",
+      genre: "Comedy",
+      cast: "Jamie Foxx",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Complete History of My Sexual Failures, A",
+      genre: "Fantasy",
+      cast: "Javier Bardem",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Justice League: Throne of Atlantis",
+      genre: "Comedy",
+      cast: "Daniel Day-Lewis",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Simone (S1m0ne)",
+      genre: "Action",
+      cast: "Kevin Spacey",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Station, The (Blutgletscher)",
+      genre: "Drama",
+      cast: "Denzel Washington",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Wyatt Earp's Revenge",
+      genre: "Action",
       cast: "Anthony Hopkins",
+      city: "Valencia",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Ratcatcher",
+      title: "Three (a.k.a. 3)",
+      genre: "Thriller",
+      cast: "Mel Gibson",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Good Boy!",
+      genre: "Sci-fi",
+      cast: "Hugh Jackman",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Billy Jack",
+      genre: "Crime",
+      cast: "Johnny Depp",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Chocolate",
+      genre: "Comedy",
+      cast: "Michael Douglas",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Efectos secundarios",
+      genre: "Fantasy",
+      cast: "Al Pacino",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Lizard, The (Marmoulak)",
+      genre: "Crime",
+      cast: "Daniel Day-Lewis",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "3rd World Hero (Bayaning Third World)",
+      genre: "Fantasy",
+      cast: "Matt Damon",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "6 Days to Air: The Making of South Park",
+      genre: "Fantasy",
+      cast: "Matt Damon",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Marius and Jeanette (Marius et Jeannette)",
+      genre: "Adventure",
+      cast: "Al Pacino",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Lilies of the Field",
+      genre: "Romance",
+      cast: "Denzel Washington",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Victor and the Secret of Crocodile Mansion",
+      genre: "Adventure",
+      cast: "Brad Pitt",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Iron Eagle II",
+      genre: "Horror",
+      cast: "Kevin Spacey",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Deep Sea 3D",
+      genre: "Fantasy",
+      cast: "Hugh Jackman",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Far Horizons, The",
+      genre: "Sci-fi",
+      cast: "Christian Bale",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Up in Arms",
+      genre: "Comedy",
+      cast: "Marlon Brando",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Last Wave, The",
+      genre: "Drama",
+      cast: "Harrison Ford",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Misérables, Les",
+      genre: "Action",
+      cast: "John Travolta",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Together Again",
+      genre: "Adventure",
+      cast: "Joaquin Phoenix",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Billy's Hollywood Screen Kiss",
+      genre: "Crime",
+      cast: "Johnny Depp",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Thankskilling",
+      genre: "Romance",
+      cast: "Edward Norton",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Uninvited Guest",
+      genre: "Fantasy",
+      cast: "Michael Douglas",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Lost Souls",
+      genre: "Crime",
+      cast: "Heath Ledger",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Mansfield Park",
+      genre: "Drama",
+      cast: "Anthony Hopkins",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Silent Souls (Ovsyanki)",
+      genre: "Horror",
+      cast: "Javier Bardem",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Bully",
+      genre: "Fantasy",
+      cast: "John Travolta",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Jauja",
+      genre: "Fantasy",
+      cast: "Christoph Waltz",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Caine Mutiny, The",
+      genre: "Drama",
+      cast: "Gene Hackman",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Thunderpants",
+      genre: "Comedy",
+      cast: "Christian Bale",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "S21: The Khmer Rouge Death Machine (S-21, la machine de mort Khmère rouge)",
+      genre: "Horror",
+      cast: "Liam Neeson",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Being Human",
+      genre: "Comedy",
+      cast: "Gene Hackman",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "General's Daughter, The",
+      genre: "Adventure",
+      cast: "Heath Ledger",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Freddy Got Fingered",
+      genre: "Thriller",
+      cast: "Brad Pitt",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Barbershop",
+      genre: "Horror",
+      cast: "Edward Norton",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Bleak Moments",
+      genre: "Romance",
+      cast: "Christoph Waltz",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "American Me",
+      genre: "Thriller",
+      cast: "Jamie Foxx",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Killing Machine, The (Icarus)",
+      genre: "Thriller",
+      cast: "Joaquin Phoenix",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Digimon: The Movie",
+      genre: "Adventure",
+      cast: "Javier Bardem",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Bible, The (a.k.a. Bible... In the Beginning, The)",
+      genre: "Horror",
+      cast: "Marlon Brando",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "My Kid Could Paint That",
+      genre: "Romance",
+      cast: "Matt Damon",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Alexander",
+      genre: "Romance",
+      cast: "Gene Hackman",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Last American Hero, The",
+      genre: "Fantasy",
+      cast: "Matt Damon",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Satin Rouge",
       genre: "Fantasy",
       cast: "Johnny Depp",
+      city: "Madrid",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Cose da pazzi",
-      genre: "Adventure",
-      cast: "John Travolta",
+      title: "Pauly Shore Is Dead",
+      genre: "Fantasy",
+      cast: "Christoph Waltz",
+      city: "Valencia",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Thin Blue Line, The",
-      genre: "Action",
-      cast: "Al Pacino",
+      title: "Good Doctor, The",
+      genre: "Crime",
+      cast: "Matt Damon",
+      city: "Valencia",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "The Gang That Sold America",
-      genre: "Adventure",
+      title: "De la servitude moderne",
+      genre: "Thriller",
+      cast: "Martin Sheen",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "First Deadly Sin, The",
+      genre: "Crime",
       cast: "Liam Neeson",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Slaughterhouse",
+      genre: "Comedy",
+      cast: "Nicolas Cage",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Outpost",
+      genre: "Drama",
+      cast: "Gene Hackman",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Candidate, The",
+      genre: "Horror",
+      cast: "Edward Norton",
+      city: "Zaragoza",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
       title: "Night and Day",
-      genre: "Action",
-      cast: "Johnny Depp",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Inadequate People (Neadekvatnye lyudi)",
       genre: "Romance",
-      cast: "Nicolas Cage",
+      cast: "Joaquin Phoenix",
+      city: "Madrid",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Wedding Belles",
-      genre: "Adventure",
-      cast: "Al Pacino",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Harum Scarum",
-      genre: "Fantasy",
-      cast: "Brad Pitt",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Bugsy Malone",
-      genre: "Sci-fi",
-      cast: "Michael Douglas",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Copenhagen",
-      genre: "Adventure",
-      cast: "Mel Gibson",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Marriage Material",
-      genre: "Fantasy",
-      cast: "Jamie Foxx",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Battle for Marjah, The",
+      title: "Barbie in the Nutcracker",
       genre: "Horror",
-      cast: "Gene Hackman",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Sea Inside, The (Mar adentro)",
-      genre: "Drama",
-      cast: "Marlon Brando",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Orca: The Killer Whale",
-      genre: "Fantasy",
-      cast: "Benicio Del Toro",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Collection, The",
-      genre: "Comedy",
-      cast: "Kirk Douglas",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Everybody Wins",
-      genre: "Horror",
-      cast: "Jeff Bridges",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Deck the Halls",
-      genre: "Adventure",
-      cast: "Gene Hackman",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Run If You Can",
-      genre: "Drama",
-      cast: "Hugh Jackman",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Scalphunters, The",
-      genre: "Thriller",
-      cast: "Christian Bale",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "The Appointments of Dennis Jennings",
-      genre: "Romance",
-      cast: "Jeff Bridges",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Bikini Beach",
-      genre: "Comedy",
-      cast: "Al Pacino",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Suspect",
-      genre: "Comedy",
-      cast: "Nicolas Cage",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Dead End",
-      genre: "Adventure",
-      cast: "Anthony Hopkins",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Carts of Darkness",
-      genre: "Comedy",
-      cast: "Harrison Ford",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "So Fine",
-      genre: "Action",
-      cast: "Gene Hackman",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Neil Young: Human Highway",
-      genre: "Fantasy",
-      cast: "Martin Sheen",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Short Term 12",
-      genre: "Adventure",
       cast: "Christoph Waltz",
+      city: "Zaragoza",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Trailer Park Boys: Live at the North Pole",
-      genre: "Crime",
-      cast: "Jack Nicholson",
+      title: "Murder by Decree",
+      genre: "Horror",
+      cast: "Christoph Waltz",
+      city: "Valencia",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Look at Me (Comme une image)",
-      genre: "Adventure",
-      cast: "Al Pacino",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Excuse My Dust",
-      genre: "Drama",
-      cast: "Daniel Day-Lewis",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Poseidon Adventure, The ",
-      genre: "Romance",
-      cast: "Mel Gibson",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "First Monday in October",
-      genre: "Crime",
-      cast: "Gene Hackman",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Floating Skyscrapers",
+      title: "Paths of Glory",
       genre: "Action",
-      cast: "Kevin Spacey",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Story of Esther Costello, The",
-      genre: "Sci-fi",
-      cast: "Hugh Jackman",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Bird of Paradise",
-      genre: "Sci-fi",
       cast: "Nicolas Cage",
+      city: "Zaragoza",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Dirt",
-      genre: "Adventure",
-      cast: "Kirk Douglas",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Madagascar: Escape 2 Africa",
+      title: "Firm, The",
       genre: "Comedy",
-      cast: "Kevin Spacey",
+      cast: "Kirk Douglas",
+      city: "Zaragoza",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Cage aux Folles, La",
+      title: "It Happens Every Spring",
+      genre: "Romance",
+      cast: "Kirk Douglas",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Fire Down Below",
+      genre: "Romance",
+      cast: "Al Pacino",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "ReGeneration",
       genre: "Thriller",
+      cast: "Edward Norton",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Great White Silence, The",
+      genre: "Fantasy",
+      cast: "Heath Ledger",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "700 Sundays",
+      genre: "Fantasy",
       cast: "Leonardo DiCaprio",
+      city: "Zaragoza",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Drummer-Crab (Le Crabe-Tambour)",
-      genre: "Fantasy",
-      cast: "Anthony Hopkins",
+      title: "Last Command, The",
+      genre: "Drama",
+      cast: "Joaquin Phoenix",
+      city: "Madrid",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Dangerous Davies: The Last Detective",
-      genre: "Crime",
-      cast: "Michael Douglas",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Coast of Death",
-      genre: "Thriller",
-      cast: "Hugh Jackman",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "¡Alambrista! (Illegal, The)",
-      genre: "Thriller",
-      cast: "Gene Hackman",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Love in Bloom",
-      genre: "Comedy",
-      cast: "Marlon Brando",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Falling in Love",
-      genre: "Comedy",
-      cast: "Kirk Douglas",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Moving McAllister",
+      title: "Ponyo (Gake no ue no Ponyo)",
       genre: "Adventure",
-      cast: "Gene Hackman",
+      cast: "John Travolta",
+      city: "Valencia",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Diary of a Cannibal",
-      genre: "Crime",
-      cast: "Jeff Bridges",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "The Sign of Four: Sherlock Holmes' Greatest Case",
-      genre: "Fantasy",
-      cast: "Jeff Bridges",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Escape from Dartmoor",
-      genre: "Fantasy",
-      cast: "Marlon Brando",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Sommer der Gaukler, Der",
-      genre: "Comedy",
-      cast: "Michael Douglas",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Night to Remember, A",
-      genre: "Sci-fi",
-      cast: "Marlon Brando",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Fright Night",
+      title: "Europa (Zentropa)",
       genre: "Romance",
-      cast: "Heath Ledger",
+      cast: "Anthony Hopkins",
+      city: "Madrid",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Santa Sangre",
-      genre: "Adventure",
-      cast: "Javier Bardem",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Masquerade",
-      genre: "Crime",
-      cast: "Jamie Foxx",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Saint Ange (House of Voices)",
-      genre: "Adventure",
-      cast: "Christoph Waltz",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Montana",
-      genre: "Horror",
-      cast: "Clint Eastwood",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Protocol",
-      genre: "Drama",
-      cast: "Matt Damon",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Omen, The",
-      genre: "Thriller",
-      cast: "Matthew McConaughey",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Triad Underworld (Gong wu) (Jiang Hu)",
-      genre: "Comedy",
-      cast: "Clint Eastwood",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Trio, The (Trio, Das)",
-      genre: "Drama",
-      cast: "Martin Sheen",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Black Pond",
-      genre: "Horror",
-      cast: "Johnny Depp",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Secretary",
-      genre: "Sci-fi",
-      cast: "Edward Norton",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Class",
-      genre: "Crime",
+      title: "Running Man, The",
+      genre: "Action",
       cast: "Harrison Ford",
+      city: "Zaragoza",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Nekromantik 2",
-      genre: "Thriller",
-      cast: "Christoph Waltz",
+      title: "Twilight",
+      genre: "Sci-fi",
+      cast: "Daniel Day-Lewis",
+      city: "Valencia",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Bridegroom",
-      genre: "Crime",
-      cast: "Heath Ledger",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Cuba",
-      genre: "Drama",
-      cast: "Anthony Hopkins",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "With Six You Get Eggroll",
+      title: "3 Holiday Tails (Golden Christmas 2: The Second Tail, A)",
       genre: "Adventure",
-      cast: "Heath Ledger",
+      cast: "Kevin Spacey",
+      city: "Zaragoza",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Gentlemen",
-      genre: "Romance",
-      cast: "Brad Pitt",
+      title: "Dallas: War of the Ewings",
+      genre: "Comedy",
+      cast: "Christoph Waltz",
+      city: "Madrid",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Cold Creek Manor",
+      title: "Strul",
       genre: "Crime",
+      cast: "Clint Eastwood",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "3some (Castillos de cartón)",
+      genre: "Horror",
+      cast: "Michael Douglas",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Space Jam",
+      genre: "Action",
+      cast: "Mel Gibson",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Joan of Arc",
+      genre: "Comedy",
+      cast: "Christoph Waltz",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Chained",
+      genre: "Action",
       cast: "Nicolas Cage",
+      city: "Madrid",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Mascara",
-      genre: "Sci-fi",
-      cast: "Jeff Bridges",
+      title: "Walking and Talking",
+      genre: "Horror",
+      cast: "Leonardo DiCaprio",
+      city: "Madrid",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Tür, Die (Door, The)",
-      genre: "Fantasy",
-      cast: "Benicio Del Toro",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Dream a Little Dream",
-      genre: "Drama",
-      cast: "Edward Norton",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Buddy Boy",
-      genre: "Action",
-      cast: "Michael Douglas",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Exorcismus",
-      genre: "Crime",
-      cast: "Denzel Washington",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Legacy, The",
-      genre: "Action",
-      cast: "Marlon Brando",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Isn't She Great?",
+      title: "Dumb & Dumber (Dumb and Dumber)",
       genre: "Thriller",
-      cast: "Matt Damon",
+      cast: "Marlon Brando",
+      city: "Madrid",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "At Midnight I'll Take Your Soul (À Meia-Noite Levarei Sua Alma)",
-      genre: "Fantasy",
-      cast: "Johnny Depp",
+      title: "Star Wars: Episode II - Attack of the Clones",
+      genre: "Action",
+      cast: "Harrison Ford",
+      city: "Madrid",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Derailed",
-      genre: "Adventure",
-      cast: "Al Pacino",
+      title: "Dorm Daze (National Lampoon Presents Dorm Daze)",
+      genre: "Comedy",
+      cast: "Mel Gibson",
+      city: "Valencia",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Acacia",
-      genre: "Sci-fi",
-      cast: "Kevin Spacey",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Blackballed: The Bobby Dukes Story",
-      genre: "Romance",
-      cast: "Brad Pitt",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Throw Away Your Books, Rally in the Streets",
-      genre: "Romance",
-      cast: "Jack Nicholson",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Tell",
+      title: "Bread, My Sweet, The (a.k.a. Wedding for Bella, A)",
       genre: "Comedy",
       cast: "Kevin Spacey",
+      city: "Madrid",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Black Cadillac",
-      genre: "Sci-fi",
-      cast: "Christoph Waltz",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "DOA: Dead or Alive",
-      genre: "Sci-fi",
-      cast: "Harrison Ford",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Jason Goes to Hell: The Final Friday",
-      genre: "Romance",
-      cast: "Kirk Douglas",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Papa",
+      title: "Sleeping with the Enemy",
       genre: "Drama",
       cast: "John Travolta",
+      city: "Zaragoza",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Escape Me Never",
-      genre: "Comedy",
-      cast: "Matthew McConaughey",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Love and Death on Long Island",
-      genre: "Action",
-      cast: "Kevin Spacey",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Curse of the Blair Witch",
-      genre: "Comedy",
-      cast: "Brad Pitt",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "General Died at Dawn, The",
-      genre: "Horror",
-      cast: "Matthew McConaughey",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Up in the Air",
-      genre: "Action",
-      cast: "Javier Bardem",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Itty Bitty Titty Committee",
-      genre: "Sci-fi",
-      cast: "Gene Hackman",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Swordfish",
-      genre: "Comedy",
-      cast: "Christian Bale",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Jönssonligan spelar högt",
-      genre: "Thriller",
-      cast: "Daniel Day-Lewis",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Stalingrad",
-      genre: "Crime",
-      cast: "Matt Damon",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Boot Camp",
-      genre: "Crime",
-      cast: "Harrison Ford",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Endangered Species",
+      title: "Enter the Phoenix (Da lao ai mei li)",
       genre: "Adventure",
-      cast: "Hugh Jackman",
+      cast: "John Travolta",
+      city: "Madrid",
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      title: "Red White & Blue",
+      title: "Manic",
       genre: "Thriller",
-      cast: "Denzel Washington",
+      cast: "Joaquin Phoenix",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Boeing, Boeing",
+      genre: "Drama",
+      cast: "Kevin Spacey",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Beer for My Horses",
+      genre: "Comedy",
+      cast: "Jack Nicholson",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Savannah",
+      genre: "Romance",
+      cast: "Anthony Hopkins",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "My Name Is Bruce",
+      genre: "Fantasy",
+      cast: "Matt Damon",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Mía",
+      genre: "Adventure",
+      cast: "Al Pacino",
+      city: "Zaragoza",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Lonely Man, The",
+      genre: "Sci-fi",
+      cast: "Kirk Douglas",
+      city: "Valencia",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Thief of Hearts",
+      genre: "Adventure",
+      cast: "Javier Bardem",
+      city: "Madrid",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      title: "Malice N Wonderland",
+      genre: "Adventure",
+      cast: "Leonardo DiCaprio",
+      city: "Madrid",
       createdAt: new Date(),
       updatedAt: new Date()
     }], {});
