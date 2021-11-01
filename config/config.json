@@ -2,7 +2,7 @@
   "development": {
     "username": "remote",
     "password": "f3d0r421.",
-    "database": "MovieClub",
+    "database": "MovieAPI",
     "host": "192.168.0.19",
     "port": "3306",
     "dialect": "mysql"
@@ -10,7 +10,7 @@
   "test": {
     "username": "remote",
     "password": "f3d0r421.",
-    "database": "MovieClub",
+    "database": "MovieAPI",
     "host": "192.168.0.19",
     "port": "3306",
     "dialect": "mysql"
@@ -18,7 +18,7 @@
   "production": {
     "username": "remote",
     "password": "f3d0r421.",
-    "database": "MovieClub",
+    "database": "MovieAPI",
     "host": "192.168.0.19",
     "port": "3306",
     "dialect": "mysql"
