@@ -20,10 +20,22 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   order.init({
-    userId: DataTypes.INTEGER,
-    movieId: DataTypes.INTEGER,
-    rentDate: DataTypes.DATE,
-    returnDate: DataTypes.DATE
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    movieId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    rentDate: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    returnDate: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
   }, {
     sequelize,
     timestamps: false,

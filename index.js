@@ -37,7 +37,7 @@ const swaggerDoc = swaggerJSDoc({
     info: {
       title: 'MovieAPI',
       version: "1.0.0",
-      description: 'Author: Daniel Rodriguez. ',
+      description: 'Author: Daniel Rodriguez.',
     }
   },
   apis: ['./views/*.js']

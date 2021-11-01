@@ -44,6 +44,22 @@ AuthController.getById = (req, res) => {
         });
 };
 
+//-------------------------------------------------------------------------------------
+//GET users by City from database 
+//FindByCity
+AuthController.getByCity = (req, res) => {
+    users.findAll({ where: { city: req.params.city } })
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while retrieving Users."
+            });
+        });
+};
+
 
 //-------------------------------------------------------------------------------------
 //Login user with database
@@ -90,7 +106,8 @@ AuthController.signUp = (req, res) => {
     user.create({
         name: req.body.name,
         email: req.body.email,
-        password: password
+        password: password,
+        city: req.body.city
     }).then(user => {
 
         // Creamos el token

@@ -22,6 +22,7 @@ const AuthController = require('../controllers/AuthController');
  *              - name
  *              - email
  *              - password
+ *              - city
  *          properties:
  *              name:
  *                  type: string
@@ -32,10 +33,14 @@ const AuthController = require('../controllers/AuthController');
  *              password:
  *                  type: string
  *                  description: Password to access the Api
+ *              city:
+ *                  type: string
+ *                  description: City where user lives
  *          example:
  *              name: UsuarioPrueba
  *              email: usuarioprueba@pruebaapi.com
  *              password: contra1234
+ *              city: Zaragoza
  *
  */
 
@@ -74,6 +79,26 @@ router.get('/:id', authJwt.isAdmin, AuthController.getById);
  *     responses:
  *       200:
  *         description: User by its id
+ *     security:
+ *       - bearerAuth: []
+ */
+router.get('/city/:city', authJwt.verifyToken, AuthController.getByCity);
+/**
+ * @swagger
+ * /users/city/{city}:
+ *   get:
+ *     summary: Retrieves users by city
+ *     tags: [Users]
+ *     parameters:
+ *       - in : path
+ *         name: city
+ *         description: city to search for users
+ *         schema:
+ *           type: string
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: Users by city
  *     security:
  *       - bearerAuth: []
  */

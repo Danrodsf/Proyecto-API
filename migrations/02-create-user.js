@@ -21,6 +21,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      city: {
+        allowNull: false,
+        type: Sequelize.STRING
+      },
       admin: {
         type: Sequelize.BOOLEAN,
       },

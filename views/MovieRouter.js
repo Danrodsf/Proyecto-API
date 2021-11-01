@@ -19,6 +19,7 @@ const authJwt = require("../middlewares/auth");
  *              - title
  *              - genre
  *              - cast
+ *              - city
  *          properties:
  *              title:
  *                  type: string
@@ -33,6 +34,7 @@ const authJwt = require("../middlewares/auth");
  *              title: NuevoTitulo
  *              genre: NuevoGenero
  *              cast: NuevoReparto
+ *              city: Zaragoza
  *              
  */
 
@@ -41,7 +43,6 @@ const MovieController = require('../controllers/MovieController');
 
 // End-points CRUD movies
 router.get('/', authJwt.verifyToken, MovieController.getAll);
-
 /**
  * @swagger
  * /movies:
@@ -132,6 +133,26 @@ router.get('/cast/:cast', authJwt.verifyToken, MovieController.getByCast);
  *     responses:
  *       200:
  *         description: Movie by its cast
+ *     security:
+ *       - bearerAuth: []
+ */
+router.get('/city/:city', authJwt.verifyToken, MovieController.getByCity);
+/**
+ * @swagger
+ * /movies/city/{city}:
+ *   get:
+ *     summary: Retrieves a Movie by Available city
+ *     tags: [Movies]
+ *     parameters:
+ *       - in : path
+ *         name: city
+ *         description: city where the Movie is available
+ *         schema:
+ *           type: string
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: Movie by available city
  *     security:
  *       - bearerAuth: []
  */
