@@ -141,7 +141,7 @@ router.delete('/:id', authJwt.isAdmin, AuthController.deleteUser);
  * @swagger
  *  /users/{id}:
  *    delete:
- *      summary: removes users from array
+ *      summary: removes users from Database
  *      tags: [Users]
  *      parameters:
  *        - in: path
