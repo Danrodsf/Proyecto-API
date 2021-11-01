@@ -121,7 +121,7 @@ router.delete('/:id', authJwt.isAdmin, OrderController.delete);
  * @swagger
  *  /orders/{id}:
  *    delete:
- *      summary: removes order from array
+ *      summary: removes order from Database
  *      tags: [Orders]
  *      parameters:
  *        - in: path
