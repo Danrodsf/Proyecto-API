@@ -1,4 +1,3 @@
-const { user } = require('../models/index');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const authConfig = require('../config/auth');
@@ -26,22 +25,28 @@ AuthController.getAll = (req, res) => {
 //GET user by Id from database
 AuthController.getById = (req, res) => {
     const id = req.params.id;
+    if (req.user.user.admin == "1" || req.user.user.id == id) {
 
-    users.findByPk(id)
-        .then(data => {
-            if (data) {
-                res.send(data);
-            } else {
-                res.status(404).send({
-                    message: `Cannot find user with id=${id}.`
+        users.findByPk(id)
+            .then(data => {
+                if (data) {
+                    res.send(data);
+                } else {
+                    res.status(404).send({
+                        message: `Cannot find user with id=${id}.`
+                    });
+                }
+            })
+            .catch(err => {
+                res.status(500).send({
+                    message: "Error retrieving user with id=" + id
                 });
-            }
-        })
-        .catch(err => {
-            res.status(500).send({
-                message: "Error retrieving user with id=" + id
             });
+    } else {
+        res.send({
+            message: `Authorization required to get other users`
         });
+    }
 };
 
 //-------------------------------------------------------------------------------------
@@ -67,7 +72,7 @@ AuthController.getByCity = (req, res) => {
 AuthController.signIn = (req, res) => {
     let { email, password } = req.body;
     // Buscar usuario
-    user.findOne({
+    users.findOne({
         where: { email: email }
     }).then(user => {
         if (!user) {
@@ -103,7 +108,7 @@ AuthController.signUp = (req, res) => {
     let password = bcrypt.hashSync(req.body.password, Number.parseInt(authConfig.rounds));
 
     // Crear un usuario
-    user.create({
+    users.create({
         name: req.body.name,
         email: req.body.email,
         password: password,
