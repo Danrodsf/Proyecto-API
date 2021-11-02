@@ -62,7 +62,7 @@ router.get('/', authJwt.isAdmin, AuthController.getAll);
  *     security:
  *       - bearerAuth: []
  */
-router.get('/:id', authJwt.isAdmin, AuthController.getById);
+router.get('/:id', authJwt.verifyToken, AuthController.getById);
 /**
  * @swagger
  * /users/{id}:
