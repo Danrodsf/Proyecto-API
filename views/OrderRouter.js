@@ -69,6 +69,26 @@ router.get('/:id', authJwt.isAdmin, OrderController.getById);
  *     security:
  *      - bearerAuth: []
  */
+router.get('/userId/:userId', authJwt.verifyToken, OrderController.getByUserId);
+/**
+ * @swagger
+ * /orders/userId/{userId}:
+ *   get:
+ *     summary: Retrieves an order by userId
+ *     tags: [Orders]
+ *     parameters:
+ *       - in : path
+ *         name: userId
+ *         description: userId of the order
+ *         schema:
+ *           type: string
+ *         required: true
+ *     responses:
+ *       200:
+ *         description: Order by its userId
+ *     security:
+ *       - bearerAuth: []
+ */
 router.post('/', authJwt.verifyToken, OrderController.create);
 /**
  * @swagger
