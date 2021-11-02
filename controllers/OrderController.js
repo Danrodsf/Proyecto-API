@@ -1,8 +1,8 @@
 //Importo modelo de datos
 const db = require("../models");
-const order = db.order;
-const user = db.user;
-const movie = db.movie;
+const orders = db.order;
+const users = db.user;
+const movies = db.movie;
 
 const OrderController = {}; //Create the object controller
 
@@ -11,7 +11,7 @@ const OrderController = {}; //Create the object controller
 //GET all orders from database
 OrderController.getAll = (req, res) => {
 
-  order.findAll({ include: [{ model: movie }, { model: user }] })
+  orders.findAll({ include: [{ model: movies }, { model: users }] })
     .then(data => {
       res.send(data);
     })
@@ -29,7 +29,7 @@ OrderController.getAll = (req, res) => {
 OrderController.getById = (req, res) => {
   const id = req.params.id;
 
-  order.findByPk(id, { include: [{ model: movie }, { model: user }] })
+  orders.findByPk(id, { include: [{ model: movies }, { model: users }] })
     .then(data => {
       if (data) {
         res.send(data);
@@ -46,75 +46,105 @@ OrderController.getById = (req, res) => {
     });
 };
 
+
 //-------------------------------------------------------------------------------------
-//CREATE a new order in database
-OrderController.create = (req, res) => {
-  let myDate = new Date(new Date().getTime() + (5 * 24 * 60 * 60 * 1000));
-  let userCity;
-  let movieCity;
-
-  // Validate request
-  if (!req.body.userId && !req.body.movieId) {
-    res.status(400).send({
-      message: "Content can not be empty!"
-    });
-    return;
-  } else {
-    user.findByPk(req.body.userId)
+//GET order by userId from database 
+//FindByUserId
+OrderController.getByUserId = (req, res) => {
+  const id = req.params.userId;
+  if (req.user.user.admin == "1" || req.user.user.id == id) {
+    orders.findAll({ where: { userId: id } })
       .then(data => {
-        if (data) {
-          userCity = data.city;
-          movie.findByPk(req.body.movieId)
-            .then(data => {
-              if (data) {
-                movieCity = data.city;
-                // Create a order
-                if (userCity === movieCity) {
-                  const neworder = {
-                    userId: req.body.userId,
-                    movieId: req.body.movieId,
-                    rentDate: new Date(),
-                    returnDate: myDate
-                  };
-
-                  // Save order in the database
-                  order.create(neworder)
-                    .then(data => {
-                      res.send(data);
-                    })
-                    .catch(err => {
-                      res.status(500).send({
-                        message:
-                          err.message || "Some error occurred while creating the new order."
-                      });
-                    });
-                } else {
-                  res.send({
-                    message: `Movie is not available to rent in User's City.`
-                  });
-                }
-              } else {
-                res.send({
-                  message: `cannot find movie with id: ${id}.`
-                });
-              }
-            })
-            .catch(err => {
-              res.status(500).send({
-                message: `Some error ocurred while fetching Movie.`
-              });
-            });
-        } else {
-          res.send({
-            message: `cannot find user with id: ${id}.`
-          });
-        }
+        res.send(data);
       })
       .catch(err => {
         res.status(500).send({
-          message: `Some error ocurred while fetching User.`
+          message:
+            err.message || "Some error occurred while retrieving order."
         });
       });
+  } else {
+    res.send({
+      message: `User's ID doesn't match body userId.`
+    });
+  }
+};
+
+//-------------------------------------------------------------------------------------
+//CREATE a new order in database
+OrderController.create = (req, res) => {
+  if (req.user.user.admin == "1" || req.user.user.id == req.body.userId) {
+    let myDate = new Date(new Date().getTime() + (5 * 24 * 60 * 60 * 1000));
+    let userCity;
+    let movieCity;
+
+    // Validate request
+    if (!req.body.userId && !req.body.movieId) {
+      res.status(400).send({
+        message: "Content can not be empty!"
+      });
+      return;
+    } else {
+      users.findByPk(req.body.userId)
+        .then(data => {
+          if (data) {
+            userCity = data.city;
+            movies.findByPk(req.body.movieId)
+              .then(data => {
+                if (data) {
+                  movieCity = data.city;
+                  // Create a order
+                  if (userCity === movieCity) {
+                    const neworder = {
+                      userId: req.body.userId,
+                      movieId: req.body.movieId,
+                      rentDate: new Date(),
+                      returnDate: myDate
+                    };
+
+                    // Save order in the database
+                    orders.create(neworder)
+                      .then(data => {
+                        res.send(data);
+                      })
+                      .catch(err => {
+                        res.status(500).send({
+                          message:
+                            err.message || "Some error occurred while creating the new order."
+                        });
+                      });
+                  } else {
+                    res.send({
+                      message: `Movie is not available to rent in User's City.`
+                    });
+                  }
+                } else {
+                  res.send({
+                    message: `cannot find movie with id: ${id}.`
+                  });
+                }
+              })
+              .catch(err => {
+                res.status(500).send({
+                  message: `Some error ocurred while fetching Movie.`
+                });
+              });
+          } else {
+            res.send({
+              message: `cannot find user with id: ${id}.`
+            });
+          }
+        })
+        .catch(err => {
+          res.status(500).send({
+            message: `Some error ocurred while fetching User.`
+          });
+        });
+    }
+  } else {
+    res.send({
+      message: `User's ID doesn't match body userId.`
+    });
   }
 };
 
@@ -124,7 +154,7 @@ OrderController.create = (req, res) => {
 OrderController.update = (req, res) => {
   const id = req.params.id;
 
-  order.update(req.body, {
+  orders.update(req.body, {
     where: { id: id }
   })
     .then(num => {
@@ -151,7 +181,7 @@ OrderController.update = (req, res) => {
 OrderController.delete = (req, res) => {
   const id = req.params.id;
 
-  order.destroy({
+  orders.destroy({
     where: { id: id }
   })
     .then(num => {
@@ -177,7 +207,7 @@ OrderController.delete = (req, res) => {
 //DELETE all orders from database
 //delete all orders   
 OrderController.deleteAll = (req, res) => {
-  order.destroy({
+  orders.destroy({
     where: {},
     truncate: false
   })
