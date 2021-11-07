@@ -42,7 +42,7 @@ const authJwt = require("../middlewares/auth");
 const MovieController = require('../controllers/MovieController');
 
 // End-points CRUD movies
-router.get('/', authJwt.verifyToken, MovieController.getAll);
+router.get('/', MovieController.getAll);
 /**
  * @swagger
  * /movies:
