@@ -53,8 +53,6 @@ router.get('/', MovieController.getAll);
  *     responses:
  *       200:
  *         description: list of all movies.
- *     security:
- *       - bearerAuth: []
  */
 router.get('/:id', authJwt.verifyToken, MovieController.getById);
 /**
