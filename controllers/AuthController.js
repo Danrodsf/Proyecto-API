@@ -135,7 +135,7 @@ AuthController.signUp = (req, res) => {
 //-------------------------------------------------------------------------------------
 //UPDATE an User from database
 AuthController.update = (req, res) => {
-    if (req.user.user.admin == "1" || req.user.user.id == req.body.userId) {
+    if (req.user.user.admin == "1" || req.user.user.email == req.body.email) {
         const id = req.params.id;
 
         users.update(req.body, {
