@@ -137,6 +137,7 @@ AuthController.signUp = (req, res) => {
 AuthController.update = (req, res) => {
     if (req.user.user.admin == "1" || req.user.user.id == req.body.userId) {
         const id = req.params.id;
+        bcrypt.hashSync(req.body.password, Number.parseInt(authConfig.rounds));
 
         users.update(req.body, {
             where: { id: id }
