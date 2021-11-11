@@ -136,6 +136,33 @@ router.post('/signup', AuthController.signUp);
  *       200:
  *         description: The User has successfully loggedIn
  */
+router.put('/:id', authJwt.verifyToken, AuthController.update);
+/**
+ * @swagger
+ * /users/{id}:
+ *   put:
+ *     summary: updates user by id
+ *     tags: [Users]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: integer
+ *         required: true
+ *         description: order id
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/User'
+ *     responses:
+ *       200:
+ *         description: The order was updated
+ *     security:
+ *      - bearerAuth: []
+ *
+ */
 router.delete('/:id', authJwt.isAdmin, AuthController.deleteUser);
 /**
  * @swagger

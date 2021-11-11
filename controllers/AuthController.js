@@ -133,6 +133,38 @@ AuthController.signUp = (req, res) => {
 
 
 //-------------------------------------------------------------------------------------
+//UPDATE an User from database
+AuthController.update = (req, res) => {
+    if (req.user.user.admin == "1" || req.user.user.id == req.body.userId) {
+        const id = req.params.id;
+
+        users.update(req.body, {
+            where: { id: id }
+        })
+            .then(num => {
+                if (num == 1) {
+                    res.send({
+                        message: "User was updated successfully."
+                    });
+                } else {
+                    res.send({
+                        message: `Cannot update User with id=${id}. Maybe User was not found or req.body is empty!`
+                    });
+                }
+            })
+            .catch(err => {
+                res.status(500).send({
+                    message: "Error updating User with id=" + id
+                });
+            });
+    } else {
+        res.send({
+            message: `Privileges are requiered to update user.`
+        });
+    }
+}
+
+//-------------------------------------------------------------------------------------
 //DELETE a user in database
 //deleteUser
 AuthController.deleteUser = (req, res) => {
