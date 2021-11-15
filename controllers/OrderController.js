@@ -53,7 +53,7 @@ OrderController.getById = (req, res) => {
 OrderController.getByUserId = (req, res) => {
   const id = req.params.userId;
   if (req.user.user.admin == "1" || req.user.user.id == id) {
-    orders.findAll({ where: { userId: id } }, { include: [{ model: movies }, { model: users }] })
+    orders.findAll({ where: { userId: id }, include: [{ model: movies }, { model: users }] })
       .then(data => {
         res.send(data);
       })
