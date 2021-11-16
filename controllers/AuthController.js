@@ -104,6 +104,12 @@ AuthController.signIn = (req, res) => {
 //REGISTER new user in database
 //create user
 AuthController.signUp = (req, res) => {
+  // Encriptamos la contraseña
+  let password = bcrypt.hashSync(
+    req.body.password,
+    Number.parseInt(authConfig.rounds)
+  );
+
   // Crear un usuario
   users
     .create({
@@ -112,9 +118,9 @@ AuthController.signUp = (req, res) => {
       password: password,
       city: req.body.city,
     })
-    .then((user) => {
-      res.json({
-        user: user,
+    .then(() => {
+      res.send({
+        message: "User was created successfully.",
       });
     })
     .catch((err) => {
