@@ -112,9 +112,9 @@ AuthController.signUp = (req, res) => {
       password: password,
       city: req.body.city,
     })
-    .then(() => {
-      res.send({
-        message: " User was created successfully.",
+    .then((user) => {
+      res.json({
+        user: user,
       });
     })
     .catch((err) => {
