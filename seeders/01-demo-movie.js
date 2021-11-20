@@ -16,6 +16,8 @@ module.exports = {
           rating: 6.8,
           posterPath: "/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg",
           backdropPath: "/efuPybo8V8KTYGslQphO74LRvm0.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "No Time to Die",
@@ -28,6 +30,8 @@ module.exports = {
           rating: 7.5,
           posterPath: "/iUgygt3fscRoKWCV1d0C7FbM9TP.jpg",
           backdropPath: "/u5Fp9GBy9W8fqkuGfLBuuoJf57Z.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "Eternals",
@@ -40,6 +44,8 @@ module.exports = {
           rating: 7.1,
           posterPath: "/6AdXwFTRTAzggD2QUTt5B7JFGKL.jpg",
           backdropPath: "/lyvszvJJqqI8aqBJ70XzdCNoK0y.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "Dune",
@@ -52,6 +58,8 @@ module.exports = {
           rating: 8,
           posterPath: "/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
           backdropPath: "/eeijXm3553xvuFbkPFkDG6CLCbQ.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "After We Fell",
@@ -64,6 +72,8 @@ module.exports = {
           rating: 7.3,
           posterPath: "/y0BBwpk5IIVbV655mfeR7kCNYhb.jpg",
           backdropPath: "/4vCh8R4yd6ybOmbxRAPOzaXmLTV.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "Apex",
@@ -76,6 +86,8 @@ module.exports = {
           rating: 5.8,
           posterPath: "/cobRV6hAj8h7dRU4WZ3dkGaRQv2.jpg",
           backdropPath: "/oGC6etRRnMQaLAorTESurrHquB.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "Free Guy",
@@ -88,6 +100,8 @@ module.exports = {
           rating: 7.8,
           posterPath: "/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg",
           backdropPath: "/8Y43POKjjKDGI9MH89NW0NAzzp8.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "The Harder They Fall",
@@ -100,6 +114,8 @@ module.exports = {
           rating: 6.6,
           posterPath: "/su9WzL7lwUZPhjH6eZByAYFx2US.jpg",
           backdropPath: "/d0mpUFKzoPwF1KsdjHpkkaYSvKm.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "Nobody Sleeps in the Woods Tonight 2",
@@ -112,6 +128,8 @@ module.exports = {
           rating: 3.9,
           posterPath: "/6QvepemlDGIiiYsVs0Y1ieFuG7N.jpg",
           backdropPath: "/icOUc1llxf2GJr1Z4dBbJYLzuvw.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "The Addams Family 2",
@@ -124,6 +142,8 @@ module.exports = {
           rating: 7.3,
           posterPath: "/ld7YB9vBRp1GM1DT3KmFWSmtBPB.jpg",
           backdropPath: "/wfrfxivLOBtGMC98tIr2LSOeKSe.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "Halloween Kills",
@@ -136,6 +156,8 @@ module.exports = {
           rating: 7,
           posterPath: "/qmJGd5IfURq8iPQ9KF3les47vFS.jpg",
           backdropPath: "/tDYwYktjFmpj92S2Qn4T3BcRgL.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "The Vault",
@@ -148,6 +170,8 @@ module.exports = {
           rating: 7.1,
           posterPath: "/kWhXubAiIcHW0xn5GThflqaKZqh.jpg",
           backdropPath: "/eBGKU0ZLJmxtVtzESTB1mfllX1J.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "Snake Eyes: G.I. Joe Origins",
@@ -160,6 +184,8 @@ module.exports = {
           rating: 6.8,
           posterPath: "/uIXF0sQGXOxQhbaEaKOi2VYlIL0.jpg",
           backdropPath: "/2OFg5p9yarI5zZsUWKCRgBgPctj.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "The Boss Baby: Family Business",
@@ -172,6 +198,8 @@ module.exports = {
           rating: 7.7,
           posterPath: "/uWStkK8bq9ixY3fc7y209ZleCoF.jpg",
           backdropPath: "/akwg1s7hV5ljeSYFfkw7hTHjVqk.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "The Protégé",
@@ -184,6 +212,8 @@ module.exports = {
           rating: 6.8,
           posterPath: "/o9FY8N5c8CXf22q8s4CmRRjAQJx.jpg",
           backdropPath: "/4O40vu2KOgnFfxvrZgzBG6havQ.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "In for a Murder",
@@ -196,6 +226,8 @@ module.exports = {
           rating: 5.7,
           posterPath: "/tq5ODEgr1PUxT7HCqDT73SlDIek.jpg",
           backdropPath: "/wJrvNljE4lZDd5D7cIxi6xAVVZL.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "Red Notice",
@@ -208,6 +240,8 @@ module.exports = {
           rating: 7,
           posterPath: "/wdE6ewaKZHr62bLqCn7A2DiGShm.jpg",
           backdropPath: "/dK12GIdhGP6NPGFssK2Fh265jyr.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "Clifford the Big Red Dog",
@@ -220,6 +254,8 @@ module.exports = {
           rating: 8.1,
           posterPath: "/ygPTrycbMSFDc5zUpy4K5ZZtQSC.jpg",
           backdropPath: "/zBkHCpLmHjW2uVURs5uZkaVmgKR.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "Demonic",
@@ -232,6 +268,8 @@ module.exports = {
           rating: 4.9,
           posterPath: "/pUK9duiCK1PKqWA5rRQ4XBMHITH.jpg",
           backdropPath: "/tFBVXnqmsmoSFR3rbltTfdGIMgV.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           title: "Rock Dog 2: Rock Around the Park",
@@ -244,6 +282,8 @@ module.exports = {
           rating: 7.5,
           posterPath: "/kETYRGA15L0wkVPugSl8lKmSgFn.jpg",
           backdropPath: "/uMPJwWDojedB36iowSl3HTLmTjW.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       ],
       {}
