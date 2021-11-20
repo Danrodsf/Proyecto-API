@@ -1,714 +1,256 @@
-'use strict';
+"use strict";
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-
-    await queryInterface.bulkInsert('movies', [{
-      title: "Seeking Asian Female",
-      genre: "Sci-fi",
-      cast: "Al Pacino",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Class of 1999 II: The Substitute",
-      genre: "Fantasy",
-      cast: "Liam Neeson",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Wild One, The",
-      genre: "Fantasy",
-      cast: "Jamie Foxx",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "I Could Go on Singing",
-      genre: "Romance",
-      cast: "Daniel Day-Lewis",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Lost Youth",
-      genre: "Thriller",
-      cast: "Matthew McConaughey",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Corpo Celeste",
-      genre: "Crime",
-      cast: "Matthew McConaughey",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Last Blitzkrieg, The",
-      genre: "Adventure",
-      cast: "Nicolas Cage",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Levitated Mass",
-      genre: "Comedy",
-      cast: "Jamie Foxx",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Complete History of My Sexual Failures, A",
-      genre: "Fantasy",
-      cast: "Javier Bardem",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Justice League: Throne of Atlantis",
-      genre: "Comedy",
-      cast: "Daniel Day-Lewis",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Simone (S1m0ne)",
-      genre: "Action",
-      cast: "Kevin Spacey",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Station, The (Blutgletscher)",
-      genre: "Drama",
-      cast: "Denzel Washington",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Wyatt Earp's Revenge",
-      genre: "Action",
-      cast: "Anthony Hopkins",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Three (a.k.a. 3)",
-      genre: "Thriller",
-      cast: "Mel Gibson",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Good Boy!",
-      genre: "Sci-fi",
-      cast: "Hugh Jackman",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Billy Jack",
-      genre: "Crime",
-      cast: "Johnny Depp",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Chocolate",
-      genre: "Comedy",
-      cast: "Michael Douglas",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Efectos secundarios",
-      genre: "Fantasy",
-      cast: "Al Pacino",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Lizard, The (Marmoulak)",
-      genre: "Crime",
-      cast: "Daniel Day-Lewis",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "3rd World Hero (Bayaning Third World)",
-      genre: "Fantasy",
-      cast: "Matt Damon",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "6 Days to Air: The Making of South Park",
-      genre: "Fantasy",
-      cast: "Matt Damon",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Marius and Jeanette (Marius et Jeannette)",
-      genre: "Adventure",
-      cast: "Al Pacino",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Lilies of the Field",
-      genre: "Romance",
-      cast: "Denzel Washington",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Victor and the Secret of Crocodile Mansion",
-      genre: "Adventure",
-      cast: "Brad Pitt",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Iron Eagle II",
-      genre: "Horror",
-      cast: "Kevin Spacey",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Deep Sea 3D",
-      genre: "Fantasy",
-      cast: "Hugh Jackman",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Far Horizons, The",
-      genre: "Sci-fi",
-      cast: "Christian Bale",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Up in Arms",
-      genre: "Comedy",
-      cast: "Marlon Brando",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Last Wave, The",
-      genre: "Drama",
-      cast: "Harrison Ford",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Misérables, Les",
-      genre: "Action",
-      cast: "John Travolta",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Together Again",
-      genre: "Adventure",
-      cast: "Joaquin Phoenix",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Billy's Hollywood Screen Kiss",
-      genre: "Crime",
-      cast: "Johnny Depp",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Thankskilling",
-      genre: "Romance",
-      cast: "Edward Norton",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Uninvited Guest",
-      genre: "Fantasy",
-      cast: "Michael Douglas",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Lost Souls",
-      genre: "Crime",
-      cast: "Heath Ledger",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Mansfield Park",
-      genre: "Drama",
-      cast: "Anthony Hopkins",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Silent Souls (Ovsyanki)",
-      genre: "Horror",
-      cast: "Javier Bardem",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Bully",
-      genre: "Fantasy",
-      cast: "John Travolta",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Jauja",
-      genre: "Fantasy",
-      cast: "Christoph Waltz",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Caine Mutiny, The",
-      genre: "Drama",
-      cast: "Gene Hackman",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Thunderpants",
-      genre: "Comedy",
-      cast: "Christian Bale",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "S21: The Khmer Rouge Death Machine (S-21, la machine de mort Khmère rouge)",
-      genre: "Horror",
-      cast: "Liam Neeson",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Being Human",
-      genre: "Comedy",
-      cast: "Gene Hackman",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "General's Daughter, The",
-      genre: "Adventure",
-      cast: "Heath Ledger",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Freddy Got Fingered",
-      genre: "Thriller",
-      cast: "Brad Pitt",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Barbershop",
-      genre: "Horror",
-      cast: "Edward Norton",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Bleak Moments",
-      genre: "Romance",
-      cast: "Christoph Waltz",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "American Me",
-      genre: "Thriller",
-      cast: "Jamie Foxx",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Killing Machine, The (Icarus)",
-      genre: "Thriller",
-      cast: "Joaquin Phoenix",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Digimon: The Movie",
-      genre: "Adventure",
-      cast: "Javier Bardem",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Bible, The (a.k.a. Bible... In the Beginning, The)",
-      genre: "Horror",
-      cast: "Marlon Brando",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "My Kid Could Paint That",
-      genre: "Romance",
-      cast: "Matt Damon",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Alexander",
-      genre: "Romance",
-      cast: "Gene Hackman",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Last American Hero, The",
-      genre: "Fantasy",
-      cast: "Matt Damon",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Satin Rouge",
-      genre: "Fantasy",
-      cast: "Johnny Depp",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Pauly Shore Is Dead",
-      genre: "Fantasy",
-      cast: "Christoph Waltz",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Good Doctor, The",
-      genre: "Crime",
-      cast: "Matt Damon",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "De la servitude moderne",
-      genre: "Thriller",
-      cast: "Martin Sheen",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "First Deadly Sin, The",
-      genre: "Crime",
-      cast: "Liam Neeson",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Slaughterhouse",
-      genre: "Comedy",
-      cast: "Nicolas Cage",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Outpost",
-      genre: "Drama",
-      cast: "Gene Hackman",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Candidate, The",
-      genre: "Horror",
-      cast: "Edward Norton",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Night and Day",
-      genre: "Romance",
-      cast: "Joaquin Phoenix",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Barbie in the Nutcracker",
-      genre: "Horror",
-      cast: "Christoph Waltz",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Murder by Decree",
-      genre: "Horror",
-      cast: "Christoph Waltz",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Paths of Glory",
-      genre: "Action",
-      cast: "Nicolas Cage",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Firm, The",
-      genre: "Comedy",
-      cast: "Kirk Douglas",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "It Happens Every Spring",
-      genre: "Romance",
-      cast: "Kirk Douglas",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Fire Down Below",
-      genre: "Romance",
-      cast: "Al Pacino",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "ReGeneration",
-      genre: "Thriller",
-      cast: "Edward Norton",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Great White Silence, The",
-      genre: "Fantasy",
-      cast: "Heath Ledger",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "700 Sundays",
-      genre: "Fantasy",
-      cast: "Leonardo DiCaprio",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Last Command, The",
-      genre: "Drama",
-      cast: "Joaquin Phoenix",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Ponyo (Gake no ue no Ponyo)",
-      genre: "Adventure",
-      cast: "John Travolta",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Europa (Zentropa)",
-      genre: "Romance",
-      cast: "Anthony Hopkins",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Running Man, The",
-      genre: "Action",
-      cast: "Harrison Ford",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Twilight",
-      genre: "Sci-fi",
-      cast: "Daniel Day-Lewis",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "3 Holiday Tails (Golden Christmas 2: The Second Tail, A)",
-      genre: "Adventure",
-      cast: "Kevin Spacey",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Dallas: War of the Ewings",
-      genre: "Comedy",
-      cast: "Christoph Waltz",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Strul",
-      genre: "Crime",
-      cast: "Clint Eastwood",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "3some (Castillos de cartón)",
-      genre: "Horror",
-      cast: "Michael Douglas",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Space Jam",
-      genre: "Action",
-      cast: "Mel Gibson",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Joan of Arc",
-      genre: "Comedy",
-      cast: "Christoph Waltz",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Chained",
-      genre: "Action",
-      cast: "Nicolas Cage",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Walking and Talking",
-      genre: "Horror",
-      cast: "Leonardo DiCaprio",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Dumb & Dumber (Dumb and Dumber)",
-      genre: "Thriller",
-      cast: "Marlon Brando",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Star Wars: Episode II - Attack of the Clones",
-      genre: "Action",
-      cast: "Harrison Ford",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Dorm Daze (National Lampoon Presents Dorm Daze)",
-      genre: "Comedy",
-      cast: "Mel Gibson",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Bread, My Sweet, The (a.k.a. Wedding for Bella, A)",
-      genre: "Comedy",
-      cast: "Kevin Spacey",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Sleeping with the Enemy",
-      genre: "Drama",
-      cast: "John Travolta",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Enter the Phoenix (Da lao ai mei li)",
-      genre: "Adventure",
-      cast: "John Travolta",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Manic",
-      genre: "Thriller",
-      cast: "Joaquin Phoenix",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Boeing, Boeing",
-      genre: "Drama",
-      cast: "Kevin Spacey",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Beer for My Horses",
-      genre: "Comedy",
-      cast: "Jack Nicholson",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Savannah",
-      genre: "Romance",
-      cast: "Anthony Hopkins",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "My Name Is Bruce",
-      genre: "Fantasy",
-      cast: "Matt Damon",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Mía",
-      genre: "Adventure",
-      cast: "Al Pacino",
-      city: "Zaragoza",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Lonely Man, The",
-      genre: "Sci-fi",
-      cast: "Kirk Douglas",
-      city: "Valencia",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Thief of Hearts",
-      genre: "Adventure",
-      cast: "Javier Bardem",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }, {
-      title: "Malice N Wonderland",
-      genre: "Adventure",
-      cast: "Leonardo DiCaprio",
-      city: "Madrid",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }], {});
+    await queryInterface.bulkInsert(
+      "movies",
+      [
+        {
+          title: "Venom: Let There Be Carnage",
+          genre: "Action",
+          cast: "Brad Pitt",
+          city: "Valencia",
+          overview:
+            "After finding a host body in investigative reporter Eddie Brock, the alien symbiote must face a new enemy, Carnage, the alter ego of serial killer Cletus Kasady.",
+          release_date: "2021-09-30",
+          rating: 6.8,
+          poster_path: "/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg",
+          backdrop_path: "/efuPybo8V8KTYGslQphO74LRvm0.jpg",
+        },
+        {
+          title: "No Time to Die",
+          genre: "Adventure",
+          cast: "Tom Cruise",
+          city: "Valencia",
+          overview:
+            "Bond has left active service and is enjoying a tranquil life in Jamaica. His peace is short-lived when his old friend Felix Leiter from the CIA turns up asking for help. The mission to rescue a kidnapped scientist turns out to be far more treacherous than expected, leading Bond onto the trail of a mysterious villain armed with dangerous new technology.",
+          release_date: "2021-09-29",
+          rating: 7.5,
+          poster_path: "/iUgygt3fscRoKWCV1d0C7FbM9TP.jpg",
+          backdrop_path: "/u5Fp9GBy9W8fqkuGfLBuuoJf57Z.jpg",
+        },
+        {
+          title: "Eternals",
+          genre: "Fantasy",
+          cast: "Ryan Reynolds",
+          city: "Valencia",
+          overview:
+            "The Eternals are a team of ancient aliens who have been living on Earth in secret for thousands of years. When an unexpected tragedy forces them out of the shadows, they are forced to reunite against mankind’s most ancient enemy, the Deviants.",
+          release_date: "2021-11-03",
+          rating: 7.1,
+          poster_path: "/6AdXwFTRTAzggD2QUTt5B7JFGKL.jpg",
+          backdrop_path: "/lyvszvJJqqI8aqBJ70XzdCNoK0y.jpg",
+        },
+        {
+          title: "Dune",
+          genre: "Sci-fi",
+          cast: "George Clooney",
+          city: "Valencia",
+          overview:
+            "Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet's exclusive supply of the most precious resource in existence-a commodity capable of unlocking humanity's greatest potential-only those who can conquer their fear will survive.",
+          release_date: "2021-09-15",
+          rating: 8,
+          poster_path: "/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
+          backdrop_path: "/eeijXm3553xvuFbkPFkDG6CLCbQ.jpg",
+        },
+        {
+          title: "After We Fell",
+          genre: "Action",
+          cast: "Brad Pitt",
+          city: "Valencia",
+          overview:
+            "Just as Tessa's life begins to become unglued, nothing is what she thought it would be. Not her friends nor her family. The only person that she should be able to rely on is Hardin, who is furious when he discovers the massive secret that she's been keeping. Before Tessa makes the biggest decision of her life, everything changes because of revelations about her family.",
+          release_date: "2021-09-01",
+          rating: 7.3,
+          poster_path: "/y0BBwpk5IIVbV655mfeR7kCNYhb.jpg",
+          backdrop_path: "/4vCh8R4yd6ybOmbxRAPOzaXmLTV.jpg",
+        },
+        {
+          title: "Apex",
+          genre: "Adventure",
+          cast: "Tom Cruise",
+          city: "Valencia",
+          overview:
+            "Ex-cop James Malone is serving a life sentence for a crime he didn’t commit. He is offered a chance at freedom if he can survive a deadly game of Apex, in which six hunters pay for the pleasure of hunting another human on a remote island. He accepts, and once he arrives, all hell breaks loose.",
+          release_date: "2021-11-12",
+          rating: 5.8,
+          poster_path: "/cobRV6hAj8h7dRU4WZ3dkGaRQv2.jpg",
+          backdrop_path: "/oGC6etRRnMQaLAorTESurrHquB.jpg",
+        },
+        {
+          title: "Free Guy",
+          genre: "Fantasy",
+          cast: "Ryan Reynolds",
+          city: "Zaragoza",
+          overview:
+            "A bank teller called Guy realizes he is a background character in an open world video game called Free City that will soon go offline.",
+          release_date: "2021-08-11",
+          rating: 7.8,
+          poster_path: "/xmbU4JTUm8rsdtn7Y3Fcm30GpeT.jpg",
+          backdrop_path: "/8Y43POKjjKDGI9MH89NW0NAzzp8.jpg",
+        },
+        {
+          title: "The Harder They Fall",
+          genre: "Sci-fi",
+          cast: "George Clooney",
+          city: "Zaragoza",
+          overview:
+            "Gunning for revenge, outlaw Nat Love saddles up with his gang to take down enemy Rufus Buck, a ruthless crime boss who just got sprung from prison.",
+          release_date: "2021-10-22",
+          rating: 6.6,
+          poster_path: "/su9WzL7lwUZPhjH6eZByAYFx2US.jpg",
+          backdrop_path: "/d0mpUFKzoPwF1KsdjHpkkaYSvKm.jpg",
+        },
+        {
+          title: "Nobody Sleeps in the Woods Tonight 2",
+          genre: "Action",
+          cast: "Brad Pitt",
+          city: "Zaragoza",
+          overview:
+            "When something horrible happens to the only survivor of a bloody massacre, an insecure rookie cop must overcome his fears to stop further carnage.",
+          release_date: "2021-10-27",
+          rating: 3.9,
+          poster_path: "/6QvepemlDGIiiYsVs0Y1ieFuG7N.jpg",
+          backdrop_path: "/icOUc1llxf2GJr1Z4dBbJYLzuvw.jpg",
+        },
+        {
+          title: "The Addams Family 2",
+          genre: "Adventure",
+          cast: "Tom Cruise",
+          city: "Zaragoza",
+          overview:
+            "The Addams get tangled up in more wacky adventures and find themselves involved in hilarious run-ins with all sorts of unsuspecting characters.",
+          release_date: "2021-10-01",
+          rating: 7.3,
+          poster_path: "/ld7YB9vBRp1GM1DT3KmFWSmtBPB.jpg",
+          backdrop_path: "/wfrfxivLOBtGMC98tIr2LSOeKSe.jpg",
+        },
+        {
+          title: "Halloween Kills",
+          genre: "Fantasy",
+          cast: "Ryan Reynolds",
+          city: "Zaragoza",
+          overview:
+            "Minutes after Laurie Strode, her daughter Karen and granddaughter Allyson left masked monster Michael Myers caged and burning in Laurie's basement, Laurie is rushed to the hospital with life-threatening injuries, believing she finally killed her lifelong tormentor. But when Michael manages to free himself from Laurie's trap, his ritual bloodbath resumes. As Laurie fights her pain and prepares to defend herself against him, she inspires all of Haddonfield to rise up against their unstoppable monster. The Strode women join a group of other survivors of Michael's first rampage who decide to take matters into their own hands, forming a vigilante mob that sets out to hunt Michael down, once and for all.",
+          release_date: "2021-10-14",
+          rating: 7,
+          poster_path: "/qmJGd5IfURq8iPQ9KF3les47vFS.jpg",
+          backdrop_path: "/tDYwYktjFmpj92S2Qn4T3BcRgL.jpg",
+        },
+        {
+          title: "The Vault",
+          genre: "Sci-fi",
+          cast: "George Clooney",
+          city: "Zaragoza",
+          overview:
+            "When an engineer learns of a mysterious, impenetrable fortress hidden under The Bank of Spain, he joins a crew of master thieves who plan to steal the legendary lost treasure locked inside while the whole country is distracted by Spain's World Cup Final. With thousands of soccer fans cheering in the streets, and security forces closing in, the crew have just minutes to pull off the score of a lifetime.",
+          release_date: "2021-03-03",
+          rating: 7.1,
+          poster_path: "/kWhXubAiIcHW0xn5GThflqaKZqh.jpg",
+          backdrop_path: "/eBGKU0ZLJmxtVtzESTB1mfllX1J.jpg",
+        },
+        {
+          title: "Snake Eyes: G.I. Joe Origins",
+          genre: "Action",
+          cast: "Brad Pitt",
+          city: "Madrid",
+          overview:
+            "After saving the life of their heir apparent, tenacious loner Snake Eyes is welcomed into an ancient Japanese clan called the Arashikage where he is taught the ways of the ninja warrior. But, when secrets from his past are revealed, Snake Eyes' honor and allegiance will be tested – even if that means losing the trust of those closest to him.",
+          release_date: "2021-07-22",
+          rating: 6.8,
+          poster_path: "/uIXF0sQGXOxQhbaEaKOi2VYlIL0.jpg",
+          backdrop_path: "/2OFg5p9yarI5zZsUWKCRgBgPctj.jpg",
+        },
+        {
+          title: "The Boss Baby: Family Business",
+          genre: "Adventure",
+          cast: "Tom Cruise",
+          city: "Madrid",
+          overview:
+            "The Templeton brothers — Tim and his Boss Baby little bro Ted — have become adults and drifted away from each other. But a new boss baby with a cutting-edge approach and a can-do attitude is about to bring them together again … and inspire a new family business.",
+          release_date: "2021-07-01",
+          rating: 7.7,
+          poster_path: "/uWStkK8bq9ixY3fc7y209ZleCoF.jpg",
+          backdrop_path: "/akwg1s7hV5ljeSYFfkw7hTHjVqk.jpg",
+        },
+        {
+          title: "The Protégé",
+          genre: "Fantasy",
+          cast: "Ryan Reynolds",
+          city: "Madrid",
+          overview:
+            "Rescued as a child by the legendary assassin Moody and trained in the family business, Anna is the world’s most skilled contract killer. When Moody, the man who was like a father to her and taught her everything she needs to know about trust and survival, is brutally killed, Anna vows revenge. As she becomes entangled with an enigmatic killer whose attraction to her goes way beyond cat and mouse, their confrontation turns deadly and the loose ends of a life spent killing will weave themselves ever tighter.",
+          release_date: "2021-08-19",
+          rating: 6.8,
+          poster_path: "/o9FY8N5c8CXf22q8s4CmRRjAQJx.jpg",
+          backdrop_path: "/4O40vu2KOgnFfxvrZgzBG6havQ.jpg",
+        },
+        {
+          title: "In for a Murder",
+          genre: "Sci-fi",
+          cast: "George Clooney",
+          city: "Madrid",
+          overview:
+            "A stay-at-home mom and avid reader of crime stories discovers the deepest secrets of a small town's residents while investigating a woman's murder.",
+          release_date: "2021-06-18",
+          rating: 5.7,
+          poster_path: "/tq5ODEgr1PUxT7HCqDT73SlDIek.jpg",
+          backdrop_path: "/wJrvNljE4lZDd5D7cIxi6xAVVZL.jpg",
+        },
+        {
+          title: "Red Notice",
+          genre: "Action",
+          cast: "Brad Pitt",
+          city: "Madrid",
+          overview:
+            "An Interpol-issued Red Notice is a global alert to hunt and capture the world's most wanted. But when a daring heist brings together the FBI's top profiler and two rival criminals, there's no telling what will happen.",
+          release_date: "2021-11-04",
+          rating: 7,
+          poster_path: "/wdE6ewaKZHr62bLqCn7A2DiGShm.jpg",
+          backdrop_path: "/dK12GIdhGP6NPGFssK2Fh265jyr.jpg",
+        },
+        {
+          title: "Clifford the Big Red Dog",
+          genre: "Adventure",
+          cast: "Tom Cruise",
+          city: "Madrid",
+          overview:
+            "As Emily struggles to fit in at home and at school, she discovers a small red puppy who is destined to become her best friend. When Clifford magically undergoes one heck of a growth spurt, becomes a gigantic dog and attracts the attention of a genetics company, Emily and her Uncle Casey have to fight the forces of greed as they go on the run across New York City. Along the way, Clifford affects the lives of everyone around him and teaches Emily and her uncle the true meaning of acceptance and unconditional love.",
+          release_date: "2021-11-10",
+          rating: 8.1,
+          poster_path: "/ygPTrycbMSFDc5zUpy4K5ZZtQSC.jpg",
+          backdrop_path: "/zBkHCpLmHjW2uVURs5uZkaVmgKR.jpg",
+        },
+        {
+          title: "Demonic",
+          genre: "Fantasy",
+          cast: "Ryan Reynolds",
+          city: "Valencia",
+          overview:
+            "A young woman unleashes terrifying demons when supernatural forces at the root of a decades-old rift between mother and daughter are ruthlessly revealed.",
+          release_date: "2021-07-29",
+          rating: 4.9,
+          poster_path: "/pUK9duiCK1PKqWA5rRQ4XBMHITH.jpg",
+          backdrop_path: "/tFBVXnqmsmoSFR3rbltTfdGIMgV.jpg",
+        },
+        {
+          title: "Rock Dog 2: Rock Around the Park",
+          genre: "Sci-fi",
+          cast: "George Clooney",
+          city: "Madrid",
+          overview:
+            "When Bodi and his band 'True Blue' leave Snow Mountain, to tour with pop sensation, Lil' Foxy, they learn that fame comes at a price.",
+          release_date: "2021-06-24",
+          rating: 7.5,
+          poster_path: "/kETYRGA15L0wkVPugSl8lKmSgFn.jpg",
+          backdrop_path: "/uMPJwWDojedB36iowSl3HTLmTjW.jpg",
+        },
+      ],
+      {}
+    );
   },
 
   down: async (queryInterface, Sequelize) => {
-
-    await queryInterface.bulkDelete('movies', null, {});
-
-  }
+    await queryInterface.bulkDelete("movies", null, {});
+  },
 };

@@ -9,43 +9,40 @@ const MovieController = {}; //Create the object controller
 //-------------------------------------------------------------------------------------
 //GET all movies from database
 MovieController.getAll = (req, res) => {
-
-  movies.findAll({ include: [{ model: order }] })
-    .then(data => {
+  movies
+    .findAll({ include: [{ model: order }] })
+    .then((data) => {
       res.send(data);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving movies."
+        message: err.message || "Some error occurred while retrieving movies.",
       });
     });
 };
-
 
 //-------------------------------------------------------------------------------------
 //GET movies by Id from database
 MovieController.getById = (req, res) => {
   const id = req.params.id;
 
-  movies.findByPk(id, { include: [{ model: order }] })
-    .then(data => {
+  movies
+    .findByPk(id, { include: [{ model: order }] })
+    .then((data) => {
       if (data) {
         res.send(data);
       } else {
         res.status(404).send({
-          message: `Cannot find movie with id=${id}.`
+          message: `Cannot find movie with id=${id}.`,
         });
       }
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message: "Error retrieving movies with id=" + id
+        message: "Error retrieving movies with id=" + id,
       });
     });
 };
-
-
 
 //-------------------------------------------------------------------------------------
 //CREATE a new movie in database
@@ -53,170 +50,171 @@ MovieController.create = (req, res) => {
   // Validate request
   if (!req.body.title) {
     res.status(400).send({
-      message: "Content can not be empty!"
+      message: "Content can not be empty!",
     });
     return;
   }
 
-  // Create a Movies
+  // Create a Movie
   const newMovie = {
     title: req.body.title,
     genre: req.body.genre,
     cast: req.body.cast,
-    city: req.body.city
+    city: req.body.city,
+    overview: req.body.overview,
+    releaseDate: req.body.releaseDate,
+    rating: req.body.rating,
+    posterPath: req.body.posterPath,
+    backdropPath: req.body.backdropPath,
   };
 
-  // Save Movies in the database
-  movies.create(newMovie)
-    .then(data => {
+  // Save Movie in the database
+  movies
+    .create(newMovie)
+    .then((data) => {
       res.send(data);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message:
-          err.message || "Some error occurred while creating the Movie."
+        message: err.message || "Some error occurred while creating the Movie.",
       });
     });
 };
-
 
 //-------------------------------------------------------------------------------------
 //UPDATE a movie from database
 MovieController.update = (req, res) => {
   const id = req.params.id;
 
-  movies.update(req.body, {
-    where: { id: id }
-  })
-    .then(num => {
+  movies
+    .update(req.body, {
+      where: { id: id },
+    })
+    .then((num) => {
       if (num == 1) {
         res.send({
-          message: "Movie was updated successfully."
+          message: "Movie was updated successfully.",
         });
       } else {
         res.send({
-          message: `Cannot update Movie with id=${id}. Maybe Movie was not found or req.body is empty!`
+          message: `Cannot update Movie with id=${id}. Maybe Movie was not found or req.body is empty!`,
         });
       }
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message: "Error updating Movie with id=" + id
+        message: "Error updating Movie with id=" + id,
       });
     });
 };
 
-
 //-------------------------------------------------------------------------------------
-//GET movie by Title from database 
+//GET movie by Title from database
 //FindByTitle
 MovieController.getByTitle = (req, res) => {
-  movies.findAll({ where: { title: req.params.title } })
-    .then(data => {
+  movies
+    .findAll({ where: { title: req.params.title } })
+    .then((data) => {
       res.send(data);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving Movie."
+        message: err.message || "Some error occurred while retrieving Movie.",
       });
     });
 };
 
-
 //-------------------------------------------------------------------------------------
-//GET movie by Genre from database 
+//GET movie by Genre from database
 //FindByGenre
 MovieController.getByGenre = (req, res) => {
-  movies.findAll({ where: { genre: req.params.genre } })
-    .then(data => {
+  movies
+    .findAll({ where: { genre: req.params.genre } })
+    .then((data) => {
       res.send(data);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving Movies."
+        message: err.message || "Some error occurred while retrieving Movies.",
       });
     });
 };
 
-
 //-------------------------------------------------------------------------------------
-//GET movie by Cast from database 
+//GET movie by Cast from database
 //FindByCast
 MovieController.getByCast = (req, res) => {
-  movies.findAll({ where: { cast: req.params.cast } })
-    .then(data => {
+  movies
+    .findAll({ where: { cast: req.params.cast } })
+    .then((data) => {
       res.send(data);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving Movies."
+        message: err.message || "Some error occurred while retrieving Movies.",
       });
     });
 };
-
 
 //-------------------------------------------------------------------------------------
-//GET movie by City from database 
+//GET movie by City from database
 //FindByCity
 MovieController.getByCity = (req, res) => {
-  movies.findAll({ where: { city: req.params.city } })
-    .then(data => {
+  movies
+    .findAll({ where: { city: req.params.city } })
+    .then((data) => {
       res.send(data);
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving Movie."
+        message: err.message || "Some error occurred while retrieving Movie.",
       });
     });
 };
-
 
 //-------------------------------------------------------------------------------------
 //DELETE a movie by Id from database
 MovieController.delete = (req, res) => {
   const id = req.params.id;
 
-  movies.destroy({
-    where: { id: id }
-  })
-    .then(num => {
+  movies
+    .destroy({
+      where: { id: id },
+    })
+    .then((num) => {
       if (num == 1) {
         res.send({
-          message: "Movie was deleted successfully!"
+          message: "Movie was deleted successfully!",
         });
       } else {
         res.send({
-          message: `Cannot delete Movie with id=${id}. Maybe Movie was not found!`
+          message: `Cannot delete Movie with id=${id}. Maybe Movie was not found!`,
         });
       }
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
-        message: "Could not delete Movie with id=" + id
+        message: "Could not delete Movie with id=" + id,
       });
     });
 };
 
-
 //-------------------------------------------------------------------------------------
 //DELETE all movies from database
-//delete all movies 
+//delete all movies
 MovieController.deleteAll = (req, res) => {
-  movies.destroy({
-    where: {},
-    truncate: false
-  })
-    .then(nums => {
+  movies
+    .destroy({
+      where: {},
+      truncate: false,
+    })
+    .then((nums) => {
       res.send({ message: `${nums} Movies were deleted successfully!` });
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while removing all movies."
+          err.message || "Some error occurred while removing all movies.",
       });
     });
 };

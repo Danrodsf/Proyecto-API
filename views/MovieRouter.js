@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
 // Middlewares
@@ -20,6 +20,11 @@ const authJwt = require("../middlewares/auth");
  *              - genre
  *              - cast
  *              - city
+ *              - overview
+ *              - releaseDate
+ *              - rating
+ *              - posterPath
+ *              - backdropPath
  *          properties:
  *              title:
  *                  type: string
@@ -30,19 +35,42 @@ const authJwt = require("../middlewares/auth");
  *              Cast:
  *                  type: string
  *                  description: Movie cast
+ *              City:
+ *                  type: string
+ *                  description: city where movie is available
+ *              Overview:
+ *                  type: string
+ *                  description: Movie description
+ *              ReleaseDate:
+ *                  type: date
+ *                  description: Movie release date
+ *              Rating:
+ *                  type: float
+ *                  description: Movie ratings
+ *              PosterPath:
+ *                  type: string
+ *                  description: Movie Poster image path
+ *              backdropPath:
+ *                  type: string
+ *                  description: Movie Backdrop Image path
  *          example:
  *              title: NuevoTitulo
  *              genre: NuevoGenero
  *              cast: NuevoReparto
  *              city: Zaragoza
- *              
+ *              overview: movie description
+ *              releaseDate: 20/11/2021
+ *              rating: 7.5
+ *              posterPath: /poster.jpg
+ *              backdropPath: /backdrop.jpg
+ *
  */
 
 //Importo modelo de datos
-const MovieController = require('../controllers/MovieController');
+const MovieController = require("../controllers/MovieController");
 
 // End-points CRUD movies
-router.get('/', MovieController.getAll);
+router.get("/", MovieController.getAll);
 /**
  * @swagger
  * /movies:
@@ -54,7 +82,7 @@ router.get('/', MovieController.getAll);
  *       200:
  *         description: list of all movies.
  */
-router.get('/:id', authJwt.verifyToken, MovieController.getById);
+router.get("/:id", authJwt.verifyToken, MovieController.getById);
 /**
  * @swagger
  * /movies/{id}:
@@ -74,7 +102,7 @@ router.get('/:id', authJwt.verifyToken, MovieController.getById);
  *     security:
  *       - bearerAuth: []
  */
-router.get('/name/:title', authJwt.verifyToken, MovieController.getByTitle);
+router.get("/name/:title", authJwt.verifyToken, MovieController.getByTitle);
 /**
  * @swagger
  * /movies/name/{title}:
@@ -94,7 +122,7 @@ router.get('/name/:title', authJwt.verifyToken, MovieController.getByTitle);
  *     security:
  *       - bearerAuth: []
  */
-router.get('/genre/:genre', authJwt.verifyToken, MovieController.getByGenre);
+router.get("/genre/:genre", authJwt.verifyToken, MovieController.getByGenre);
 /**
  * @swagger
  * /movies/genre/{genre}:
@@ -114,7 +142,7 @@ router.get('/genre/:genre', authJwt.verifyToken, MovieController.getByGenre);
  *     security:
  *       - bearerAuth: []
  */
-router.get('/cast/:cast', authJwt.verifyToken, MovieController.getByCast);
+router.get("/cast/:cast", authJwt.verifyToken, MovieController.getByCast);
 /**
  * @swagger
  * /movies/cast/{cast}:
@@ -134,7 +162,7 @@ router.get('/cast/:cast', authJwt.verifyToken, MovieController.getByCast);
  *     security:
  *       - bearerAuth: []
  */
-router.get('/city/:city', authJwt.verifyToken, MovieController.getByCity);
+router.get("/city/:city", authJwt.verifyToken, MovieController.getByCity);
 /**
  * @swagger
  * /movies/city/{city}:
@@ -154,7 +182,7 @@ router.get('/city/:city', authJwt.verifyToken, MovieController.getByCity);
  *     security:
  *       - bearerAuth: []
  */
-router.post('/', authJwt.isAdmin, MovieController.create);
+router.post("/", authJwt.isAdmin, MovieController.create);
 /**
  * @swagger
  * /movies:
@@ -174,7 +202,7 @@ router.post('/', authJwt.isAdmin, MovieController.create);
  *       - bearerAuth: []
  */
 
-router.put('/:id', authJwt.isAdmin, MovieController.update);
+router.put("/:id", authJwt.isAdmin, MovieController.update);
 /**
  * @swagger
  * /movies/{id}:
@@ -201,8 +229,8 @@ router.put('/:id', authJwt.isAdmin, MovieController.update);
  *       - bearerAuth: []
  *
  */
-router.delete('/', authJwt.isAdmin, MovieController.deleteAll);
-router.delete('/:id', authJwt.isAdmin, MovieController.delete);
+router.delete("/", authJwt.isAdmin, MovieController.deleteAll);
+router.delete("/:id", authJwt.isAdmin, MovieController.delete);
 /**
  * @swagger
  *  /movies/{id}:
