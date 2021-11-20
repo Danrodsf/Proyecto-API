@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       rating: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       posterPath: {

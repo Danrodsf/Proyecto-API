@@ -33,7 +33,7 @@ module.exports = {
         allowNull: false,
       },
       rating: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       posterPath: {
