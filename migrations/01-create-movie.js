@@ -25,24 +25,24 @@ module.exports = {
         type: Sequelize.STRING,
       },
       overview: {
-        type: DataTypes.STRING,
         allowNull: false,
+        type: Sequelize.STRING,
       },
       releaseDate: {
-        type: DataTypes.DATE,
         allowNull: false,
+        type: Sequelize.DATE,
       },
       rating: {
-        type: DataTypes.INTEGER,
         allowNull: false,
+        type: Sequelize.FLOAT,
       },
       posterPath: {
-        type: DataTypes.STRING,
         allowNull: false,
+        type: Sequelize.STRING,
       },
       backdropPath: {
-        type: DataTypes.STRING,
         allowNull: false,
+        type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,
